@@ -1,28 +1,44 @@
 ---
-title: "A gentle introduction to the world of R"
+title: "A Gentle Introduction to the World of R"
 output: learnr::tutorial
 runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
 library(learnr)
+gradethis::gradethis_setup()
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Topic 1
+## R - Basically just a Calculator
 
-### Exercise 
+*Let's start with the easiest application of R: As a simple calculator! No need to buy another one of those overpriced Casio-thingies anymore that you inevitably broke or lost after high school(EVEN THOUGH YOUR MOM TOLD YOU TO BE CAREFUL!), now you can just use the inconvenience of putting everything into code and hope for the best!*
 
-*Here's a simple exercise with an empty code chunk provided for entering the answer.*
+### Addition
 
-Write the R code required to add two plus two:
+*Remember addition? It's been a while.. Addition in R works as simple as on a calculator, just enter the numbers you want to add and a `+` in-between. So, to find the result to 5 plus 5, just write: `5 + 5` and run the code:*
+
+```{r five-plus-five, exercise=TRUE, exercise.eval=TRUE}
+5+5
+```
+
+It's your turn now! Write the code necessary to add 2 and 2!
 
 ```{r two-plus-two, exercise=TRUE}
 
 ```
 
-### Exercise with Code
+```{r two-plus-two-solution}
+2+2
+```
+
+```{r two-plus-two-code-check}
+grade_code()
+```
+
+
+### Subtraction
 
 *Here's an exercise with some prepopulated code as well as `exercise.lines = 5` to provide a bit more initial room to work.*
 
@@ -34,20 +50,43 @@ add <- function() {
 }
 ```
 
-## Topic 2
+## Writing your own Functions
+
+*Want to know what biases have to do with this topic? Nothing... But I needed a test video and certainly didn't want to record a separate one, so go ahead and watch this anyway! Also, leave a comment pointing everything out I did wrong, it increases viewership interaction!*
+
+![](https://www.youtube.com/watch?v=FWabHJFAfxE)
+
+### The Structure of a Function
+
+*As we have seen in the video, the structure of a function basically equates to:*
+
+```{r, echo=TRUE}
+name_of_function <- function(arg1, arg2, arg3) {
+  print(arg1)
+  print(arg2)
+  return(arg1 + arg2 + arg3);
+}
+```
+
+*Now, as we have learned from *
 
 ### Exercise with Hint
 
-*Here's an exercise where the chunk is pre-evaulated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.*
+As we have learned from hitchhiker's guide to the galaxy, the answer to the ultimate question in life is "42". To approximate the calculation behind this, simply write a function `answer_to_everything` which takes a string as input, prints it, ignores it, and simply returns `42`, regardless of what the input says! 
 
-Modify the following code to limit the number of rows printed to 5:
+```{r answer_to_everything, exercise=TRUE}
 
-```{r print-limit, exercise=TRUE, exercise.eval=TRUE}
-mtcars
+answer_to_everything <-
+
+
+answer_to_everything("What is the answer to the ultimate question in life?")
+
 ```
 
-```{r print-limit-hint}
-head(mtcars)
+```{r answer_to_everything-hint}
+answer_to_everything <- function(question) {
+  
+}
 ```
 
 ### Quiz
@@ -58,11 +97,11 @@ Some questions to verify that you understand the purposes of various base and re
 
 ```{r quiz}
 quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
+  question("How do you return the variable `cookie` from a function?",
+    answer("`cookie`"),
+    answer("`return cookie`"),
+    answer("`return(cookie)`", correct = TRUE),
+    answer("any of the above")
   ),
   question("Which of the R packages listed below are used to create plots?",
     answer("lattice", correct = TRUE),
