@@ -180,6 +180,31 @@ sqrt(256)
 grade_code()
 ```
 
+### Variables! (and comments. Also comments.)
+
+If you work with lots of numbers, it makes sense for them to be saved in some way, like in a variable! Variables are ways of storing data in a dedicated place, accessible by the variable name. You can assign data to the variable, manipulate and update it dynamically! Let's look at an example
+
+```{r variiiables, exercise=TRUE, exercise.eval=FALSE, include=FALSE}
+x <- 5 # Assigning a 5 to x
+
+print(x) # Prints the value assigned to x
+x # Also prints the value, the print()-function above is optional
+
+x <- x*x # re-assigning a different value to x!
+x # Bwoah!
+```
+
+As you can see above, you can assign a value to a variable by first writing the variable name, here `x`, and then using an arrow  `<-` into the direction of the variable. On the right side you then put the value. As common in figuratively all other programming languages, you can also use the `=` instead of the arrow, but it is uncommon in R. You can also see in the examples that you can use the variables for calculations and re-assign them!
+
+Two other things mentionworthy: We use the print function to print a value, three times even! This is possible by either just typing the variable name, or explicitly putting the `print()` function around it. Finally, to add comments to any code in R, use `#`! Anything in one line that is behind the waffle is ignored when running the code and is only there for us pityful humans to write and read extra info in the code! And no, just because it is a hashtag does not mean it is automatically posted to Twitter!
+
+Some rules about naming variables:
+
+* Variable names must start with a letter, usually a small letter.
+* It cannot start with a number, but may include them in their name.
+* Variable names are case senstitive, meaning: `mEaSuRe` and  `measurE` would be two different variables - albeit both horribly named!
+* Some words are reserved for special purposes and cannot be used as variable names, like `null` `FALSE` `if` or `Persnickety`! Okay, the last one is made up, but still.
+* It is seen as common to name variables using underscores, for example: `my_variable` or `important_data`, but conventions from other languages, like `myOtherVariable` are not false. Just choose whatever feels right - or whatever your boss tells you to feel right about!
 
 ## Data Types
 
@@ -499,24 +524,6 @@ if (me_being_rich) {
 
 As you can see in the first if statement, if a variable is a boolean, we do not need to use a statement like `me_being_rich == TRUE`, we can just input the boolean itself, as it is already a truth value. The `else if` statement is then checked, as I am in fact not rich. Contrary to what we did before, we actually did not create separate variables here for the brat's preferences, but instead just put the number and the haircolor directly into the statement. As you can see, I do in fact suffice her requirements here, so the statement afterwards runs, which ends the if-chain and therefore the `else`-statement is not printed.
 
-### Nested If-Statements
-
-Finally, it is also possible to put an if statement into another if statement, called a nested if-statement! 
-
-```{r ifStatement4, exercise=TRUE, exercise.eval=TRUE, include=FALSE}
-my_height <- 184
-my_haircolor <- "blonde"
-me_being_rich <- FALSE
-
-if (me_being_rich) {
-  print("Match and write me!")
-} else if (my_height > 180 && my_haircolor != "black") {
-  print("Match, but I will write if you're worthy!")
-} else {
-  print("No! Just no!")
-}
-```
-
 ## Looping!
 
 Additionally to if statement, there are so-called loops as logical elements, making it easier for you to code efficiently. Let's say you want to count the numbers from 1 to 5, you could annoyingly print all of them once after another:
@@ -600,21 +607,20 @@ grade_code()
 
 What if we don't want to actually break the loop, but just want to skip certain numbers or executions of the loop? Why, we have the `next()` function for that, which conveniently skips over the rest of the code in the body/squiggly brackets, but instead of breaking the loop just goes on with the next iteration.
 
-
+Now, write a while loop where instead of ending the loop, it just skips over those numbers dividable by three and only prints those that are NOT dividable by three. Make sure to use the `next()` keyword here to get some practice, even if there is an easier solution. Also, keep in mind that you need to increase the counter in `i` even when the number is not printed.
 
 ```{r whileTask2, exercise=TRUE}
 i <- 1
 while (i <= 20) {
-  print(i)
-  i = i+1
+  # code goes here :)
 }
 ```
 
 ```{r whileTask2-solution}
 i <- 1
 while (i <= 20) {
-  
   if (i %% 3 == 0) {
+    i = i+1
     next()
   }
   print(i)
@@ -781,31 +787,194 @@ not_invited <- c("Ned", "Neds Wife", "Neds Son", "Neds Daughter")
 invitees %in% not_invited
 ```
 
-The term retrieves its own list, a list of booleans in the same order as the `invitees`-list. 
+The term retrieves its own list, a list of booleans in the same order as the `invitees`-list. When a value is in both of the lists, it turns true, else it turns false. if we just used this expression, we would keep Ned's family and discard everyone else, what a horrible mistake! Therefore we use the `!` to turn all values within the list of booleans around. The expression `!(invitees %in% not_invited)`therefore neatly keeps everyone who is NOT in the list of uninvited people.
+
+### Neat methods for Vectors
+
+Again, a large amount of methods are available to work with vectors! Let's look at some of the most useful ones. The first one is `sort()`, which allows you to sort a list in case you accidentally dropped one and it is completely unsorted...
+
+```{r veclistssort, exercise=TRUE, exercise.eval=FALSE, include=FALSE}
+x <- c(3, 5, 1, 2, 4)
+y <- c("Vatican", "Andorra", "Liechtenstein", "Apple")
+
+sort(x)
+sort(y)
+```
+
+As you can see, numbers are sorted by increasing them, while Strings are sorted alphabetically, from A to Z.
+
+To give you a small task which requires some research on your part: Try to sort the following list in reverse order, from A to Z. Don't be afraid to google, it is quite a simple task!
+
+```{r vecsort1, exercise=TRUE}
+x <- c("done", "by you!", "Wow,", "very well")
+
+# Reverse sort here!
+```
+
+```{r vecsort1-solution}
+x <- c("done", "by you!", "Wow,", "very well")
+
+sort(x, decreasing = TRUE)
+```
+
+```{r vecsort1-check}
+grade_result(
+  pass_if(~identical(.result, c("Wow,", "very well", "done", "by you!")))
+)
+```
+
+Another neat option is to check the length, so the number of items in a vector. This is fittingly done with the `length()` method, applied in the same way as the sort-function above. I will immediately leave it up to you to apply it:
+
+Remember how you're still planning this Christmas dinner thing with your family? You've decided to get Pizza for... reasons. You have to now figure out how many Pizzas to order, assuming one pizza per person:
+
+```{r pizzaman, exercise=TRUE}
+invitees <- c("Mom", "Dad", "Dog", "Hamster", "Joanne (Wait, who is Joanne again?)")
+
+# Find out the number of people in the list!
+```
+
+```{r pizzaman-solution}
+invitees <- c("Mom", "Dad", "Dog", "Hamster", "Joanne (Wait, who is Joanne again?)")
+
+length(invitees)
+```
+
+```{r pizzaman-check}
+grade_result(
+  pass_if(~identical(.result, 5L))
+)
+```
+
+Finally, we don't just want to be able to delete certain elements in a vector, we also want some to be replaced. For this, we need to use our knowledge about accessing specific elements within a vector and then simply re-assign other values to them. For example:
+
+```{r replaceme, exercise=TRUE, exercise.eval=FALSE, include=FALSE}
+x <- c(1, 2, 3, 4, 5)
+
+x[3] <- 100 # Replacing the third element
+x
+
+x[3:5] <- c(77, 88, 99) # Replacing the third to fifth element with a list
+x
+
+x[2:4] <- -55 # Replacing multiple elements with one number!
+x
+```
+
+As you can see in the first example, you can simply replace one element with another. You can also see that you can replace multiple ones at once with a whole list of elements! Finally, if you assign one value to multiple elements, all of them will have the same value!
+
+To test how well you're remembering the accessing possibilities presented before, you will now put a final touch on the Christmas preparations! Everyone has handed in their wishes for what they want on their Pizza for Christmas, however some of them have seriously chosen Pineapple. PINEAPPLE! Now, it is too late to uninvite them, so we simply have to replace their pineapple-topping wish in the grocery list with some extra cheese, cause that is the objectively right thing to do!
+
+```{r pinoapple, exercise=TRUE}
+# Grocery List Vector
+x <- c("Cheese", "Pineapple", "Tuna", "Onion", "Basil", "Cheese", "Garlic", "Extra Garlic", "Onion", "More Garlic", "Cheese", "Pineapple", "Meat", "Tomato", "No Cheese", "Pineapple", "Really, I don't want cheese", "Onion", "Seriously, I can't process cheese, do not give me cheese!", "Meat", "Paprika", "Tomato")
+
+
+replacement <- "Extra Cheese!"
+
+# Now, replace all Pineapple's with the extra cheese!
+
+x
+```
+
+```{r pinoapple-solution}
+x[x == "Pineapple"] <- replacement
+
+x
+
+```
+
+```{r pinoapple-check}
+grade_result(
+  pass_if(~identical(.result, c("Cheese", "Extra Cheese!", "Tuna", "Onion", "Basil", "Cheese", "Garlic", "Extra Garlic", "Onion", "More Garlic", "Cheese", "Extra Cheese!", "Meat", "Tomato", "No Cheese", "Extra Cheese!", "Really, I don't want cheese", "Onion", "Seriously, I can't process cheese, do not give me cheese!", "Meat", "Paprika", "Tomato")))
+)
+```
 
 ## Data Frames
 
-### Quiz!
+## Final Quiz!
 
 Let's see how well you're doing on completely meaningless, but fun multiple choice questions!
 
 ```{r quiz}
-quiz(
-  question("How do you return the variable `cookie` from a function?",
-    answer("`cookie`"),
-    answer("`return cookie`"),
-    answer("`return(cookie)`", correct = TRUE),
-    answer("any of the above")
+quiz(caption="Basic Calculator Stuff!",
+  question("How do you multiply 3 times 4 in R?",
+    answer("`3 times 4`", message="That would be a bit too easy, wouldn't it? :)"),
+    answer("`3 x 4`", message = "No, x can be used as a variable name"),
+    answer("`3 * 4`", correct = TRUE),
+    answer("`3 + 3 + 3 + 4`", message="Same result, but not multiplication!"),
+    allow_retry = T
   ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+  
+  question("Which operator is used for Floor Division",
+    answer("`%%`", message="`%/%` would be the remainder from the Floor division!"),
+    answer("`//`", message="`//` doesn't exist, I'm afraid :)"),
+    answer("`%/%`", correct = TRUE),
+    answer("`floor()`", correct=TRUE),
+    correct = "Turns out that `floor()` is actually a second option to achieve the same :) Trick question!",
+    allow_retry = T
+  ),
+  
+  question("Which of these are correct variable names?",
+    answer("my_variable_1", correct = TRUE),
+    answer("_variable_1", message="You cannot start a variable name with an underscore."),
+    answer("1st_variable", message="Do not start a name with a number!"),
+    answer("my_variable", correct = TRUE)
   )
 )
 ```
 
-```{r fig1, echo = FALSE, out.width = "100%", fig.cap = "In the figure above, `x` is the left-hand circle, `y` is the right-hand circle, and the shaded region show which parts each command selects."}
-knitr::include_graphics("images/hellundgrau.png")
+```{r quiz2}
+quiz(caption="Data Types in R!",
+  question("How do you turn the numeric `55` into a String?",
+    answer("`string(55)`"),
+    answer("`as.string(55)`", message = "Don't forget that R does not call Strings Strings, urgh."),
+    answer("`as.character(55)`", correct = TRUE),
+    answer("`55.toString()`"),
+    allow_retry = T
+  ),
+  
+  question("How do you combine two strings `x` and `y` (with a space separating them)?",
+    answer("`x + y`", message="Urgh, I wish they finally implemented that..."),
+    answer("`parse(x,y)`", ),
+    answer("`paste(x,y)`", correct = TRUE),
+    answer("`concat(x,y)`"),
+    correct = "Turns out that `floor()` is actually a second option to achieve the same :) Trick question!",
+    allow_retry = T
+  ),
+  
+  question("Which of these are correctly written boolean states?",
+    answer("TRUE", correct = TRUE),
+    answer("False", message="R is case sensitive, check the capitalization!"),
+    answer("Right", message="Right, which is, ironically, wrong, heh."),
+    answer("F", correct = TRUE)
+  )
+)
+```
+
+```{r quiz3}
+quiz(caption="Conditional Statements",
+  question("If you either get 2 out of the following three questions correct, or you are a rebel, you can continue with the next quiz. Which logical statement reflects this?",
+    answer("``"),
+    answer("`as.string(55)`", message = "Don't forget that R does not call Strings Strings, urgh."),
+    answer("`n_correct > 2 `", correct = TRUE),
+    answer("`55.toString()`"),
+    allow_retry = T
+  ),
+  
+  question("",
+    answer("`x + y`", message="Urgh, I wish they finally implemented that..."),
+    answer("`parse(x,y)`", ),
+    answer("`paste(x,y)`", correct = TRUE),
+    answer("`concat(x,y)`"),
+    correct = "Turns out that `floor()` is actually a second option to achieve the same :) Trick question!",
+    allow_retry = T
+  ),
+  
+  question("Which of these are correctly written boolean states?",
+    answer("TRUE", correct = TRUE),
+    answer("False", message="R is case sensitive, check the capitalization!"),
+    answer("Right", message="Right, which is ironically, wrong, heh."),
+    answer("F", correct = TRUE)
+  )
+)
 ```
