@@ -1,4 +1,4 @@
-
+# Use "remotes::install_github(“rstudio/gradethis”)" in console!
 
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))

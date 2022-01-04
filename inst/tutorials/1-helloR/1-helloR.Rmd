@@ -881,7 +881,8 @@ quiz(caption="Basic Calculator Stuff!",
     answer("`3 x 4`", message = "No, x can be used as a variable name"),
     answer("`3 * 4`", correct = TRUE),
     answer("`3 + 3 + 3 + 4`", message="Same result, but not multiplication!"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("Which operator is used for Floor Division",
@@ -890,7 +891,8 @@ quiz(caption="Basic Calculator Stuff!",
     answer("`%/%`", correct = TRUE),
     answer("`floor()`", correct=TRUE),
     correct = "Turns out that `floor()` is actually a second option to achieve the same :) Trick question!",
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("Which of these are correct variable names?",
@@ -898,7 +900,8 @@ quiz(caption="Basic Calculator Stuff!",
     answer("_variable_1", message="You cannot start a variable name with an underscore."),
     answer("1st_variable", message="Do not start a name with a number!"),
     answer("my_variable", correct = TRUE),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   )
 )
 ```
@@ -910,7 +913,8 @@ quiz(caption="Data Types in R!",
     answer("`as.string(55)`", message = "Don't forget that R does not call Strings Strings, urgh."),
     answer("`as.character(55)`", correct = TRUE),
     answer("`55.toString()`"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("How do you combine two strings `x` and `y` (with a space separating them)?",
@@ -919,7 +923,8 @@ quiz(caption="Data Types in R!",
     answer("`paste(x,y)`", correct = TRUE),
     answer("`concat(x,y)`"),
     correct = "Turns out that `floor()` is actually a second option to achieve the same :) Trick question!",
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("Which of these are correctly written boolean states?",
@@ -927,7 +932,8 @@ quiz(caption="Data Types in R!",
     answer("False", message="R is case sensitive, check the capitalization!"),
     answer("Right", message="Right, which is, ironically, wrong, heh."),
     answer("F", correct = TRUE),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   )
 )
 ```
@@ -939,7 +945,8 @@ quiz(caption="Conditional Statements",
     answer("`number_correct >= 2 !& rules`"),
     answer("`number_correct >= 2 || !rules`", correct = TRUE),
     answer("`number_correct < 2 && !rules`"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("What was the right order of those weird brackets in an IF Statement again?",
@@ -947,7 +954,8 @@ quiz(caption="Conditional Statements",
     answer("`if[]{}`", ),
     answer("`if(){}`", correct = TRUE),
     answer("`if{}()`"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("Which comparisons would always lead to opposite outcomes than `x <= 4`",
@@ -955,7 +963,8 @@ quiz(caption="Conditional Statements",
     answer("x != 4"),
     answer("x >= 4", message="Careful, in case x equals 4, both would now turn out positive!"),
     answer("4 < x", correct = TRUE),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   )
 )
 ```
@@ -967,7 +976,8 @@ quiz(caption="Loopings!",
     answer("A `break`-statement breaks out of the loop", correct = TRUE),
     answer("You throw the PC out of the window!", message="No, even then the while loop will continue running in your head and haunt you in your sleep!"),
     answer("A `next` statement runs the next part of the code", message = "The next statement only starts the next iteration in the loop"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("Which of the following for loops has the correct structure?",
@@ -975,7 +985,8 @@ quiz(caption="Loopings!",
     answer("`for (1:10){}`", ),
     answer("`for (i in 1:10){}`", correct = TRUE),
     answer("`for (i,1,10){}`"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   )
 )
 ```
@@ -987,7 +998,8 @@ quiz(caption="Vectors!",
     answer("`vector()`"),
     answer("`c()`", correct=T),
     answer("Google: How to instantiate vector in R?", message = "Yes, but no."),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   
   question("A secret stash of `5`s has been hidden in the second to ninth position of vector `numerical_treasure`! Quick, retrieve it!",
@@ -996,21 +1008,24 @@ quiz(caption="Vectors!",
     answer("`numerical_treasure[2:9]`", correct = TRUE),
     answer("`numerical_treasure(2,9)`"),
     answer("I don't care for those primitive `5`s, I'm more of a complex, irrational numbers guy...", message="Yeah, that's what they all say, but at the end of the day, they're all enjoying their fours, twos and elevens. DISMISSED."),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
       question("How do you get the number of elements in vector `x` again?",
     answer("len(x)"),
     answer("len x"),
     answer("length(x)", correct=T),
     answer("size(x)"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   ),
   question("Which topping does NEVER EVER belong on a pizza?",
     answer("Pineapple!!!!!!!!", correct = TRUE),
     answer("Cheese", message = "LEAVE THE CLASS, NOW!"),
     answer("Basil"),
     answer("Tuna", message = "I respectfully disagree"),
-    allow_retry = T
+    allow_retry = T,
+    random_answer_order = TRUE
   )
 
 )
