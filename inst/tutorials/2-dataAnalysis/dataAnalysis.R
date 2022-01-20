@@ -117,3 +117,20 @@ summary(m4)
 m5 <- gam(creative_task ~ s(schizo_Score, bs="cr"), data=dat)
 summary(m5)
 anova(m5, m4)
+
+# Aggregate (Dunno where to put it yet), creativity by gender by 
+
+genderized_insights <- aggregate(formula=creative_task ~ sex + gaming, data=dat, subset = sex %in% c("M", "F"),FUN=mean)
+genderized_insights
+
+# Plot
+
+plot(dat$creative_task, dat$iq)
+
+ggplot(dat, aes(iq,creative_task)) + geom_point() + geom_smooth(method=lm)
+
+ggplot(dat, aes(iq,creative_task)) + geom_point() + geom_smooth(method=loess)
+
+
+# Complex GLMM Model?
+

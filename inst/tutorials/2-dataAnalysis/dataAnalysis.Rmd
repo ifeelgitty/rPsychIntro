@@ -1,0 +1,180 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+```{r}
+# Empty current environment
+rm(list = ls())
+# Import Data
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+getwd()
+```
+
+# Importing the data
+
+It might not surprise you to hear that: To work with data, we have to first load the data into the R Environment. There are different formats of data which you might have to import, usually googling the file type and "import to R" is sufficient to find ways to import the data. For this project, we've included two files of fake-data in the *.csv*-format, which is a common format to store table-like data in a compressed space. The files can be found under the directory */data*. If you open this folder in the *Files*-tab of RStudio, you will see the files *creat_task.csv* and *user_dat.csv*. In research, you will often end up having different files from different sources, due to the software with which you capture the data. For this case, both files represent the following:
+
+* user_dat.csv: This represents the participant data we've acquired through a PC questionnaire
+* iq_dat.csv: This includes the iq test scores per participant from the IQ test software we've used in the experiment.
+* creat_scores.csv: This file includes the creativity ratings per participant.
+
+To load the data into the environment of R, we need to read the csv, which conveniently happens using the *read.csv()*-function! Let's look at how this works, reading out the *user_dat.csv* file and assigning the data to an own variable, called *raw_user*, raw, because we have not processed/changed any of the data yet.
+
+```{r}
+raw_user <- read.csv("data//user_dat.csv", sep = ";")
+```
+
+What's happening here? we define the new variable *raw_user* with *<-*. The *read.csv()* function takes two so-called *arguments*! Arguments are specifications which let a function know how to do the thing it's supposed to do, but in the correct way! We can find two arguments for this function, separated by a comma, *,*:
+
+* In this case, the function obviously needs to know where to find the file it needs to read out. We just specify the path: *"data//user_dat.csv"*. The *//* specifies the folder it's inside. Yes, the way it's written is quite weird, let us not go into detail for why that is the case, but if you struggle setting the correct path, google! 
+* The second argument provided to the function is *sep = ";"*. Now, why to we have a name and an equal sign here? This is a so-called *optional argument*, meaning that the function does not need you to specify anything to run (which does not mean it will run correctly, but it will run after all). *sep* refers to the *Separator* in the csv-file, which separates the different entries of the table, here we use the *";"*-separator, so we have specified it!
+
+## Your turn!: Load the remaining files!
+
+Now it's your turn, based on the code/function above, read the remaining two files, *creat_task.csv* and *iq_dat.csv*. The structure of those files is the same, so it also has the *;*-separator.
+
+```{r}
+raw_creat <- read.csv("data//creat_task.csv", sep = ";")
+raw_iq <- read.csv("data//iq_dat.csv", sep = ";")
+```
+
+# Investigating the data
+
+Let's now investigate the dataset that we've just loaded. Let us start with the *raw_user* data. We can use the *class()* function and provide the name of the variable to check what data type, or class, the loaded data has:
+
+```{r}
+class(raw_user)
+```
+
+As you can see, it is a *data frame*. You can shortly google "R data frame" to get a basic overview of what this class is, but in general it is a kind of table, or frame, which holds data in a structured way. We can investigate the structure by checking the *head*, referring to the top rows of the table:
+
+```{r}
+head(raw_user)
+```
+
+This gives us a lot of insight already, even though only the first 6 rows of the data have been printed! We can see the names of the different columns on the top, with the data types in *<>* below them. It then prints the first six rows of data for all columns. The columns are as follows:
+
+* *id*: The subject id
+* *sex*: The sex of the different subjects, with the first six ones either being M=Male or F=Female.
+* *age*: The age of the subjects
+* *gaming*: A boolean/logical variable, indicating whether the subject is someone who plays computer games.
+* *schizo_Score*: A score on a range from 0-100 indicating how high each subject scored on a test indicating levels of Schizophrenia. 
+* *education*: The highest level of finished education of each subject, e.g. "High School", "Undergraduate", "Graduate".
+
+The *head()*-function only gives us an indication of the data, but doesn't tell us the number of participants, so the number of rows in the data in total. We can check this using the *nrow()* function, again providing the variable name as argument.
+
+```{r}
+nrow(raw_user)
+```
+
+Great, now we know how many participants we have in the data.
+
+We can also check how many variables, so columns, are in the data, obviously using the *ncol()* function:
+
+```{r}
+ncol(raw_user)
+```
+
+If you're too busy to write two lines of code to check these kinds of things, you can also use the *dim()* function to check the Dimensions (Ahaaa!) of the data frame:
+
+```{r}
+dim(raw_user)
+```
+
+This first gives you the number of rows and then the number of columns.
+
+## Analyze the raw_creat:
+
+It's wake-up time again! To move on, check whether the creativity test data in *raw_creat* is the same data type as the user data:
+
+```{r}
+class(raw_creat)
+```
+
+Looks good! Now let's investigate the structure of it, so the head of the data:
+
+```{r}
+head(raw_creat)
+```
+
+Quite obviously, we do have a very similar structure with a lot less variables:
+
+* *id*: Again, we do have the subject ids, which allow us to match the data with the same id from the other dataset
+* *creative_task*: The scores from the creative task!
+
+Let's make sure that the number of participant entries actually matches the number we've seen in the previous data:
+
+```{r}
+nrow(raw_creat)
+```
+
+Looking good!
+
+## Analyze the raw_iq
+
+Let's shortly check the raw_iq file as well, not expecting many surprises here. You know, if there is a head, there must also be a tail! Let's check this by using a *tail()* function, the same way we used the head one:
+
+```{r}
+tail(raw_creat)
+```
+
+As expected, it shows the last, instead of the first rows. We can already see that something's wrong here though: The number of rows does not match the expected ids, it's somehow... less. However, we do at least have the variable *iq*, conveniently indicating the, well, IQ of the participant.
+
+So, what about the rows? Are there entrys missing? Let's check whether the number of rows is correct:
+
+```{r}
+nrow(raw_iq)
+```
+
+Indeed, there are too few rows, indicating that we are missing some of the data from the participants! We will deal with that later, but you can already see that checking your data appropiately can give you early, important insights that you might need before aimlessly moving on!
+
+# Merging the data frames
+
+Wouldn't it be easier to just merge all of the data into one, big data frame? Yeah, it certainly would! There are multiple ways to do this, we will again use a convenient function, namely *merge()*. Let us first merge the *raw_user* and the *raw_creat* dataframes and call the resulting dataframe, which will be our main dataframe *"dat"* - creative, huh?
+
+```{r}
+dat <- merge(raw_user, raw_creat, by="id")
+```
+
+*merge()* takes two unnamed arguments in which you provide the data.frames which should be merged. However, there is also a third argument here, which indicates by what column the data frames are supposed to be merged, *by*. We want them to be merged by the subject id, which in both dataframes is called "id", therefore we supply this as an argument. This means that, for example, the rows of the subject with id 6 in *raw_creat* will be merged with the rows of the subject with the same id 6 in *raw_user*. Let's check the resulting dataframe, *dat*:
+
+```{r}
+head(dat)
+```
+
+Indeed, we now basically have all the data in one, big data frame! Well, all but the IQ scores...
+
+## Add the IQ Scores to dat!
+
+By the same logic used above, add the iq scores found in *raw_iq* to the big dataframe in *dat*, meaning that you have to merge both of them the same way we did this above, also merging it by the subject id!
+
+```{r}
+dat <- merge(dat, raw_iq, by="id")
+```
+
+Again, check whether everything went well by checking the head of the data:
+
+```{r}
+head(dat)
+```
+
+Neat! Although we shouldn't forget that there are missing values, after all...
+
+# Preprocessing and Cleaning the data
+
+We now have all the data neatly in one data frame. Before we start analyzing, we need to properly clean the data and investigate whether everything is ok with it, though. 
