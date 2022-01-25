@@ -1,0 +1,1501 @@
+id;sex;age;gaming;schizo_Score;education
+1;F;23;F;32;Undergraduate
+2;M;26;F;61;Undergraduate
+3;M;23;T;60;Undergraduate
+4;F;23;T;53;Undergraduate
+5;M;26;F;26;High School
+6;F;28;F;42;High School
+7;M;28;T;16;Undergraduate
+8;F;25;F;49;High School
+9;M;25;T;22;Undergraduate
+10;F;27;F;47;High School
+11;M;24;T;67;High School
+12;F;22;T;30;Graduate
+13;F;22;F;39;Graduate
+14;F;29;T;34;Undergraduate
+15;M;29;F;35;High School
+16;M;21;T;41;High School
+17;M;24;T;20;Graduate
+18;M;27;T;37;High School
+19;F;21;F;17;Undergraduate
+20;M;21;T;21;High School
+21;F;28;F;15;Graduate
+22;M;20;T;29;High School
+23;M;33;T;41;High School
+24;M;18;T;13;High School
+25;M;23;F;36;High School
+26;M;22;T;63;High School
+27;M;21;T;42;High School
+28;M;34;T;15;High School
+29;F;24;F;63;High School
+30;M;24;F;31;Undergraduate
+31;M;24;F;36;High School
+32;M;24;T;39;Undergraduate
+33;F;26;F;59;High School
+34;M;27;T;27;High School
+35;F;29;T;24;Undergraduate
+36;F;28;T;62;High School
+37;F;27;F;25;Graduate
+38;F;26;F;23;Undergraduate
+39;M;21;T;28;High School
+40;F;24;F;100;High School
+41;F;28;F;84;Undergraduate
+42;F;23;F;9;Undergraduate
+43;M;28;F;22;Graduate
+44;F;22;F;32;Undergraduate
+45;M;25;T;43;High School
+46;M;24;T;48;Graduate
+47;M;26;F;41;High School
+48;F;29;F;49;High School
+49;M;28;T;24;Graduate
+50;M;20;F;35;High School
+51;F;26;T;25;High School
+52;F;31;F;26;High School
+53;M;25;T;38;High School
+54;M;25;T;27;High School
+55;F;20;F;83;Undergraduate
+56;F;23;F;40;High School
+57;M;22;T;25;High School
+58;M;20;T;25;High School
+59;F;23;F;47;Graduate
+60;F;28;F;73;High School
+61;X;23;F;18;Graduate
+62;M;27;T;37;High School
+63;F;26;T;18;High School
+64;F;27;F;20;High School
+65;F;22;F;62;Undergraduate
+66;M;25;T;33;Graduate
+67;F;23;T;26;High School
+68;F;26;F;86;High School
+69;M;22;T;73;Graduate
+70;M;28;F;16;High School
+71;M;26;T;67;Undergraduate
+72;X;23;T;22;Graduate
+73;M;30;T;38;High School
+74;F;25;F;48;Undergraduate
+75;F;36;F;31;Graduate
+76;F;28;F;53;High School
+77;F;26;F;32;High School
+78;F;23;F;45;Graduate
+79;F;21;F;42;High School
+80;M;31;T;100;Undergraduate
+81;F;24;T;19;Undergraduate
+82;M;19;T;13;High School
+83;M;30;F;62;Undergraduate
+84;M;27;T;32;High School
+85;F;19;F;25;High School
+86;M;23;F;34;Undergraduate
+87;F;30;T;8;High School
+88;M;24;F;37;High School
+89;M;22;T;40;High School
+90;M;23;F;50;High School
+91;F;27;T;38;Graduate
+92;M;23;T;54;Graduate
+93;F;26;F;44;High School
+94;F;22;T;42;Undergraduate
+95;F;27;T;34;Undergraduate
+96;M;28;T;39;Undergraduate
+97;F;23;F;19;High School
+98;F;21;T;26;Undergraduate
+99;M;20;T;35;High School
+100;M;22;F;43;Undergraduate
+101;F;23;T;27;High School
+102;M;28;F;18;High School
+103;M;22;T;31;High School
+104;M;24;T;49;High School
+105;F;20;F;65;Undergraduate
+106;M;22;F;43;High School
+107;M;25;T;30;Graduate
+108;F;23;F;14;Graduate
+109;F;23;F;60;Undergraduate
+110;M;23;T;30;High School
+111;M;27;T;100;Undergraduate
+112;M;28;T;9;High School
+113;M;20;T;20;Undergraduate
+114;M;28;T;44;Undergraduate
+115;F;28;T;41;High School
+116;M;23;T;62;High School
+117;M;25;F;52;High School
+118;M;25;T;26;Undergraduate
+119;M;28;F;17;Graduate
+120;M;26;T;53;High School
+121;F;31;F;18;Graduate
+122;M;21;F;21;Undergraduate
+123;F;27;T;56;High School
+124;F;22;F;20;Graduate
+125;F;31;F;24;High School
+126;M;24;F;84;Graduate
+127;M;24;T;22;Undergraduate
+128;F;23;F;53;High School
+129;F;24;F;24;High School
+130;M;28;T;53;Graduate
+131;M;20;T;11;Undergraduate
+132;M;31;T;6;Graduate
+133;M;24;F;43;High School
+134;M;28;F;27;Undergraduate
+135;F;22;T;13;High School
+136;M;24;F;26;High School
+137;M;20;T;37;High School
+138;M;24;F;15;Graduate
+139;M;23;F;42;High School
+140;F;22;T;32;Undergraduate
+141;M;27;T;29;High School
+142;F;24;T;68;Undergraduate
+143;M;22;T;45;High School
+144;F;20;F;43;Undergraduate
+145;F;27;F;58;Undergraduate
+146;M;23;F;34;High School
+147;F;22;F;17;High School
+148;M;25;T;7;High School
+149;M;31;T;38;High School
+150;M;23;T;45;Undergraduate
+151;F;26;F;15;Undergraduate
+152;F;28;F;16;High School
+153;F;28;T;37;Undergraduate
+154;M;30;F;14;Graduate
+155;F;27;T;8;High School
+156;M;23;F;34;High School
+157;F;22;F;26;High School
+158;F;24;F;25;Graduate
+159;F;22;T;21;Graduate
+160;M;22;T;46;Graduate
+161;F;24;F;13;High School
+162;F;29;F;31;Undergraduate
+163;M;23;F;26;High School
+164;M;22;T;32;High School
+165;M;23;T;10;Graduate
+166;F;27;F;19;Undergraduate
+167;F;26;T;35;Undergraduate
+168;M;24;T;24;Undergraduate
+169;X;22;F;17;Graduate
+170;M;22;T;43;High School
+171;M;26;F;25;Graduate
+172;M;22;T;46;High School
+173;M;29;T;29;High School
+174;X;25;F;28;Graduate
+175;M;30;T;45;High School
+176;F;22;T;42;High School
+177;M;23;F;55;High School
+178;F;26;F;52;Undergraduate
+179;F;27;T;50;Graduate
+180;M;24;F;45;High School
+181;M;21;F;27;High School
+182;F;19;F;65;High School
+183;M;26;T;34;Graduate
+184;M;23;T;52;High School
+185;F;26;F;30;Graduate
+186;M;28;F;30;High School
+187;M;24;T;17;Undergraduate
+188;F;29;F;19;High School
+189;F;22;F;53;Undergraduate
+190;M;30;T;84;High School
+191;M;26;T;18;Undergraduate
+192;M;22;T;47;High School
+193;M;26;T;62;High School
+194;M;28;F;85;High School
+195;M;22;T;46;Graduate
+196;X;28;F;53;High School
+197;M;28;F;48;High School
+198;M;26;T;41;High School
+199;F;26;F;16;Graduate
+200;M;22;F;62;Undergraduate
+201;M;20;F;21;High School
+202;F;23;F;22;Undergraduate
+203;M;22;T;18;High School
+204;M;23;F;27;Undergraduate
+205;M;21;F;36;High School
+206;F;20;F;38;Undergraduate
+207;M;22;F;34;High School
+208;M;24;T;32;High School
+209;F;21;T;37;Undergraduate
+210;M;24;F;38;Undergraduate
+211;F;22;F;58;Graduate
+212;M;32;T;26;Undergraduate
+213;M;29;T;25;High School
+214;M;24;F;56;High School
+215;F;29;F;22;High School
+216;M;24;F;59;High School
+217;F;26;F;58;Graduate
+218;M;22;T;43;High School
+219;F;33;F;6;Undergraduate
+220;M;24;F;26;Graduate
+221;M;25;T;24;Graduate
+222;M;21;T;35;High School
+223;M;23;F;35;Graduate
+224;F;30;T;73;High School
+225;F;25;F;17;Undergraduate
+226;M;29;T;28;High School
+227;F;26;F;27;Graduate
+228;M;20;F;36;High School
+229;F;20;F;54;High School
+230;F;30;F;27;High School
+231;F;27;T;45;Graduate
+232;F;27;T;32;Graduate
+233;X;27;F;47;High School
+234;M;26;T;14;Undergraduate
+235;M;26;F;39;Graduate
+236;F;27;F;19;Undergraduate
+237;M;25;T;15;Undergraduate
+238;M;22;T;27;Graduate
+239;M;28;T;44;High School
+240;M;22;F;22;High School
+241;M;29;T;15;High School
+242;F;28;F;15;High School
+243;F;28;T;30;Undergraduate
+244;F;29;F;24;Graduate
+245;F;24;F;71;High School
+246;F;27;T;23;High School
+247;F;32;F;33;Graduate
+248;F;26;T;40;High School
+249;F;25;F;55;High School
+250;F;23;F;37;High School
+251;M;27;T;42;Undergraduate
+252;F;24;T;23;Graduate
+253;F;25;F;20;Undergraduate
+254;F;25;T;33;High School
+255;M;27;F;17;Undergraduate
+256;F;23;F;50;High School
+257;F;22;T;54;Undergraduate
+258;F;21;F;21;Undergraduate
+259;F;24;F;20;High School
+260;F;21;T;38;Undergraduate
+261;M;27;F;90;High School
+262;F;23;F;15;Undergraduate
+263;M;30;T;29;High School
+264;M;23;T;63;Undergraduate
+265;M;20;F;19;High School
+266;M;25;F;48;Undergraduate
+267;F;24;F;14;High School
+268;F;23;F;45;Graduate
+269;M;26;T;59;Graduate
+270;F;25;F;20;High School
+271;F;23;F;61;High School
+272;F;20;F;21;High School
+273;M;24;T;85;Undergraduate
+274;M;27;T;30;High School
+275;F;24;F;46;Undergraduate
+276;F;23;F;26;Undergraduate
+277;F;23;F;28;High School
+278;F;24;F;8;High School
+279;M;23;T;7;Undergraduate
+280;F;24;T;46;High School
+281;M;21;F;34;Undergraduate
+282;M;25;T;24;Graduate
+283;M;21;F;26;High School
+284;F;22;F;34;High School
+285;F;27;F;12;Graduate
+286;M;23;F;38;Undergraduate
+287;F;22;F;48;Graduate
+288;M;24;T;36;Graduate
+289;M;34;F;24;Graduate
+290;M;23;T;23;Undergraduate
+291;F;20;F;48;Undergraduate
+292;M;27;T;97;High School
+293;F;24;T;34;Graduate
+294;M;26;T;54;Undergraduate
+295;M;30;T;26;High School
+296;F;23;F;29;High School
+297;M;26;F;25;Undergraduate
+298;F;24;F;19;Graduate
+299;F;25;F;54;High School
+300;F;20;F;34;High School
+301;M;29;T;56;Undergraduate
+302;M;19;F;29;High School
+303;M;27;T;12;Graduate
+304;F;23;T;24;High School
+305;M;23;T;42;Graduate
+306;M;23;F;6;Undergraduate
+307;F;22;F;22;Graduate
+308;F;22;T;23;Undergraduate
+309;F;27;F;45;High School
+310;F;24;T;44;High School
+311;F;22;T;14;High School
+312;M;28;T;52;High School
+313;F;25;F;45;High School
+314;M;21;T;14;Undergraduate
+315;M;28;T;37;High School
+316;F;28;F;19;High School
+317;M;32;T;68;High School
+318;F;22;T;13;High School
+319;F;29;F;25;Undergraduate
+320;M;33;T;20;High School
+321;F;29;F;14;Undergraduate
+322;M;23;T;15;Undergraduate
+323;M;25;F;24;Graduate
+324;F;27;F;68;Graduate
+325;X;23;T;37;Undergraduate
+326;F;30;F;22;Graduate
+327;M;21;T;54;High School
+328;F;23;F;43;Graduate
+329;F;23;T;57;High School
+330;X;26;F;14;Undergraduate
+331;M;22;T;32;Graduate
+332;F;24;F;63;Undergraduate
+333;F;21;F;48;Undergraduate
+334;F;28;T;39;High School
+335;M;22;F;13;High School
+336;F;22;F;56;High School
+337;F;29;T;24;Undergraduate
+338;F;22;T;42;Graduate
+339;F;22;F;37;High School
+340;M;26;T;18;Graduate
+341;M;27;T;46;Graduate
+342;M;27;F;55;Graduate
+343;M;22;F;100;Graduate
+344;M;29;T;89;High School
+345;F;25;F;50;Undergraduate
+346;M;22;T;53;High School
+347;M;24;F;17;Undergraduate
+348;M;22;T;48;Graduate
+349;M;23;T;33;High School
+350;F;23;T;39;Undergraduate
+351;M;26;T;69;Undergraduate
+352;F;24;T;7;High School
+353;M;23;T;33;High School
+354;M;25;T;26;Graduate
+355;M;22;F;19;Undergraduate
+356;M;30;T;47;Undergraduate
+357;M;21;T;31;Undergraduate
+358;M;28;F;55;High School
+359;M;22;F;47;Graduate
+360;M;30;T;31;Graduate
+361;M;29;T;28;High School
+362;M;23;F;30;High School
+363;M;25;T;30;High School
+364;F;24;T;62;Undergraduate
+365;F;29;T;42;Graduate
+366;F;29;T;12;Undergraduate
+367;F;26;T;52;Graduate
+368;M;28;T;32;High School
+369;F;23;F;28;Graduate
+370;M;21;T;61;Undergraduate
+371;M;28;T;11;High School
+372;F;26;F;32;Graduate
+373;M;27;F;11;High School
+374;F;23;F;21;High School
+375;F;31;F;55;Graduate
+376;M;21;T;13;Undergraduate
+377;M;26;T;83;High School
+378;M;23;T;20;High School
+379;M;25;T;28;Undergraduate
+380;M;29;F;6;Graduate
+381;M;23;F;25;High School
+382;M;23;T;12;High School
+383;F;22;F;54;Graduate
+384;F;22;T;18;High School
+385;M;23;T;34;Graduate
+386;F;22;T;24;Undergraduate
+387;F;25;T;36;High School
+388;M;21;F;44;High School
+389;F;23;T;16;High School
+390;M;26;T;54;Graduate
+391;F;22;F;27;High School
+392;M;28;T;41;Graduate
+393;M;21;F;37;Undergraduate
+394;M;27;T;45;Graduate
+395;F;28;F;12;Undergraduate
+396;F;22;T;23;High School
+397;M;27;F;30;Graduate
+398;F;32;F;10;Graduate
+399;F;23;F;44;Undergraduate
+400;F;21;T;52;Undergraduate
+401;F;21;F;5;High School
+402;F;31;T;11;Undergraduate
+403;M;22;F;62;Graduate
+404;F;23;F;32;Graduate
+405;F;26;F;35;Undergraduate
+406;M;21;T;47;High School
+407;F;24;F;6;Undergraduate
+408;F;25;T;26;High School
+409;F;24;T;11;Graduate
+410;F;22;F;63;Graduate
+411;M;24;T;51;Graduate
+412;M;22;T;24;High School
+413;F;22;F;62;High School
+414;M;20;T;31;High School
+415;NA;24;F;29;High School
+416;M;23;F;16;Graduate
+417;M;26;T;44;Graduate
+418;M;20;T;13;High School
+419;M;22;T;31;Undergraduate
+420;M;28;T;17;Undergraduate
+421;F;21;T;19;High School
+422;M;26;T;36;Undergraduate
+423;M;25;T;38;Graduate
+424;F;28;T;34;High School
+425;F;26;F;40;Graduate
+426;M;27;T;25;Undergraduate
+427;M;24;T;53;High School
+428;M;23;F;40;High School
+429;F;22;F;21;High School
+430;M;23;T;58;Graduate
+431;M;23;T;27;High School
+432;F;24;F;19;Undergraduate
+433;M;27;T;23;High School
+434;M;27;T;49;High School
+435;M;21;T;24;Undergraduate
+436;F;25;F;27;Graduate
+437;F;28;T;27;Graduate
+438;M;32;F;30;High School
+439;M;22;F;20;High School
+440;M;23;T;29;High School
+441;F;29;F;15;Graduate
+442;M;24;T;37;High School
+443;F;26;T;17;Graduate
+444;F;27;F;60;Undergraduate
+445;F;30;F;38;High School
+446;F;29;F;9;High School
+447;M;26;F;49;High School
+448;F;22;F;48;High School
+449;F;32;F;45;Undergraduate
+450;M;23;F;26;Undergraduate
+451;M;25;T;40;High School
+452;M;24;F;11;High School
+453;M;28;T;30;Graduate
+454;F;22;F;38;Undergraduate
+455;M;24;F;46;High School
+456;M;21;T;55;High School
+457;M;22;T;42;High School
+458;F;28;F;39;Undergraduate
+459;F;24;F;30;High School
+460;F;23;F;45;High School
+461;M;22;T;56;Graduate
+462;M;22;T;16;High School
+463;F;29;T;57;High School
+464;F;23;T;15;Undergraduate
+465;M;27;T;77;Graduate
+466;M;26;F;21;Undergraduate
+467;M;29;T;26;Undergraduate
+468;M;30;T;41;High School
+469;M;23;T;16;High School
+470;M;24;T;46;Graduate
+471;M;22;T;22;High School
+472;F;27;F;68;Undergraduate
+473;F;25;F;38;High School
+474;M;24;T;31;High School
+475;F;22;F;41;High School
+476;F;28;F;15;High School
+477;M;27;T;28;Graduate
+478;F;23;T;73;High School
+479;F;30;F;22;High School
+480;F;21;F;69;High School
+481;F;30;T;29;Graduate
+482;M;28;T;20;Graduate
+483;F;19;F;16;High School
+484;M;22;T;19;High School
+485;M;30;T;49;Undergraduate
+486;M;24;T;41;Graduate
+487;F;22;F;16;Graduate
+488;F;26;F;36;Undergraduate
+489;M;22;F;39;High School
+490;M;28;T;32;High School
+491;M;22;T;27;Undergraduate
+492;F;26;F;35;High School
+493;F;24;F;21;High School
+494;F;25;F;21;Graduate
+495;M;24;T;14;Graduate
+496;M;22;T;24;High School
+497;M;29;T;13;High School
+498;F;29;F;19;High School
+499;F;27;F;25;High School
+500;M;22;F;47;Graduate
+501;M;24;F;19;Graduate
+502;F;26;T;56;High School
+503;M;21;T;51;Undergraduate
+504;M;28;F;27;Undergraduate
+505;M;23;F;65;High School
+506;M;29;T;60;High School
+507;F;25;F;37;High School
+508;M;28;F;24;Undergraduate
+509;F;22;T;39;High School
+510;F;22;F;13;High School
+511;M;23;F;5;High School
+512;M;28;F;31;High School
+513;M;23;T;10;Graduate
+514;M;26;T;36;Graduate
+515;F;26;F;28;High School
+516;M;25;T;50;Graduate
+517;F;28;T;49;Graduate
+518;F;22;T;55;High School
+519;X;26;F;28;High School
+520;F;24;F;17;High School
+521;M;23;T;37;High School
+522;M;24;T;41;Graduate
+523;F;36;F;27;High School
+524;NA;24;F;44;Graduate
+525;M;27;F;32;High School
+526;M;24;T;61;High School
+527;F;24;F;67;Undergraduate
+528;M;28;T;40;High School
+529;F;27;F;31;High School
+530;F;32;T;26;High School
+531;M;29;T;49;Graduate
+532;NA;22;F;30;Undergraduate
+533;M;24;T;30;High School
+534;F;27;F;24;Graduate
+535;M;23;T;17;Graduate
+536;M;24;F;11;High School
+537;F;26;F;50;Graduate
+538;F;24;F;43;Graduate
+539;M;24;T;36;Undergraduate
+540;NA;25;F;31;High School
+541;M;30;T;50;Graduate
+542;M;21;F;43;High School
+543;F;25;F;23;Graduate
+544;M;24;T;48;Graduate
+545;M;25;T;36;High School
+546;M;22;T;15;Graduate
+547;M;20;T;38;Undergraduate
+548;M;25;T;43;Graduate
+549;M;22;T;20;Graduate
+550;M;29;F;35;High School
+551;F;24;F;13;Undergraduate
+552;F;30;T;76;Undergraduate
+553;F;30;F;23;High School
+554;F;27;T;12;Undergraduate
+555;M;32;F;24;Undergraduate
+556;M;21;F;57;Undergraduate
+557;M;28;T;37;High School
+558;M;21;F;50;Undergraduate
+559;M;21;T;63;Undergraduate
+560;F;21;F;34;Undergraduate
+561;F;24;F;31;High School
+562;F;28;F;9;Graduate
+563;M;25;T;54;Graduate
+564;M;23;T;15;High School
+565;M;24;F;35;Undergraduate
+566;X;22;F;74;High School
+567;M;20;T;59;Undergraduate
+568;F;22;T;17;High School
+569;F;26;F;36;High School
+570;F;27;F;43;Graduate
+571;F;25;F;39;High School
+572;M;22;T;19;High School
+573;M;23;T;14;Graduate
+574;F;25;T;18;High School
+575;M;21;F;25;Undergraduate
+576;F;20;F;37;High School
+577;M;19;F;36;High School
+578;F;21;T;23;High School
+579;F;25;F;34;High School
+580;M;24;F;40;High School
+581;F;22;F;18;High School
+582;M;23;T;49;High School
+583;M;22;T;38;High School
+584;F;22;F;22;High School
+585;M;23;T;46;High School
+586;M;28;T;47;High School
+587;F;25;F;31;High School
+588;F;25;F;29;High School
+589;M;25;F;81;High School
+590;F;23;F;15;High School
+591;F;22;F;28;Undergraduate
+592;M;23;T;14;Graduate
+593;M;24;F;29;High School
+594;F;28;F;23;High School
+595;F;23;F;25;Graduate
+596;F;23;F;26;Graduate
+597;F;20;T;48;High School
+598;M;21;T;35;Undergraduate
+599;M;28;T;32;Graduate
+600;M;26;T;50;High School
+601;X;22;F;36;Graduate
+602;M;24;F;17;Graduate
+603;F;25;F;15;High School
+604;F;23;F;21;Graduate
+605;F;21;F;31;Undergraduate
+606;F;23;T;35;Graduate
+607;M;24;T;46;Graduate
+608;F;21;F;43;High School
+609;F;23;F;51;Graduate
+610;M;22;T;17;High School
+611;F;30;F;36;Undergraduate
+612;M;28;F;32;High School
+613;M;23;T;44;High School
+614;M;22;T;23;High School
+615;F;25;T;55;Undergraduate
+616;F;25;F;27;High School
+617;F;24;T;20;High School
+618;F;21;T;33;High School
+619;F;29;T;16;High School
+620;M;23;T;24;High School
+621;F;20;F;43;Undergraduate
+622;F;23;T;50;Graduate
+623;F;24;F;33;High School
+624;M;23;T;14;High School
+625;M;22;T;24;Undergraduate
+626;F;25;T;29;High School
+627;M;22;T;22;Undergraduate
+628;M;30;T;36;High School
+629;F;26;T;56;Undergraduate
+630;F;26;F;22;High School
+631;M;20;T;78;High School
+632;M;24;T;48;High School
+633;F;24;T;31;High School
+634;M;27;T;24;High School
+635;M;20;T;26;Undergraduate
+636;M;21;T;58;High School
+637;F;26;F;73;Undergraduate
+638;M;21;T;27;High School
+639;F;25;F;29;High School
+640;F;23;F;46;High School
+641;M;27;F;52;Graduate
+642;M;25;T;41;High School
+643;X;25;F;44;Undergraduate
+644;M;24;T;30;High School
+645;M;28;T;54;High School
+646;F;26;F;15;Graduate
+647;F;27;F;27;High School
+648;F;23;F;10;Graduate
+649;F;24;F;13;High School
+650;M;23;F;54;Graduate
+651;M;22;T;21;High School
+652;M;26;F;21;High School
+653;F;26;F;14;Graduate
+654;M;27;T;14;High School
+655;F;21;F;18;Undergraduate
+656;F;24;F;29;Graduate
+657;F;26;F;11;Undergraduate
+658;F;31;T;47;High School
+659;F;23;F;17;Undergraduate
+660;F;26;F;19;Graduate
+661;F;24;F;18;Graduate
+662;M;27;T;33;High School
+663;M;22;T;40;High School
+664;F;25;F;19;High School
+665;F;30;F;15;Undergraduate
+666;F;23;T;41;Graduate
+667;F;24;F;33;Graduate
+668;F;27;F;56;High School
+669;M;24;T;19;High School
+670;M;23;T;83;Undergraduate
+671;F;24;F;43;High School
+672;F;24;T;27;High School
+673;M;26;F;83;High School
+674;F;24;T;24;Undergraduate
+675;F;29;F;31;High School
+676;F;23;F;13;Undergraduate
+677;F;26;F;50;High School
+678;M;22;F;26;High School
+679;M;25;T;27;Undergraduate
+680;M;22;T;16;High School
+681;F;25;F;39;High School
+682;F;25;F;29;Graduate
+683;M;23;T;81;High School
+684;F;24;F;31;High School
+685;F;26;F;27;High School
+686;F;26;F;41;Graduate
+687;M;21;T;61;Undergraduate
+688;M;23;T;15;High School
+689;M;22;T;17;High School
+690;M;24;T;58;High School
+691;X;24;F;18;High School
+692;F;22;F;49;High School
+693;M;31;F;36;Graduate
+694;F;21;F;17;Undergraduate
+695;F;24;F;56;High School
+696;M;25;F;35;Graduate
+697;M;23;T;29;High School
+698;F;22;F;22;Undergraduate
+699;F;24;T;41;High School
+700;F;21;F;37;High School
+701;M;24;T;49;High School
+702;M;27;F;25;High School
+703;M;24;F;38;High School
+704;F;26;F;34;Graduate
+705;F;25;F;34;Graduate
+706;M;24;T;45;Undergraduate
+707;M;27;F;34;Graduate
+708;F;23;F;72;Undergraduate
+709;F;25;F;10;High School
+710;F;24;F;22;High School
+711;M;28;T;46;High School
+712;X;31;T;41;Undergraduate
+713;F;20;T;27;High School
+714;M;32;T;39;High School
+715;F;20;T;17;Undergraduate
+716;F;24;F;48;Graduate
+717;F;27;F;19;Graduate
+718;F;29;F;23;High School
+719;F;23;F;41;Undergraduate
+720;F;23;F;51;Undergraduate
+721;F;28;F;43;High School
+722;M;20;T;19;Undergraduate
+723;M;32;F;93;Graduate
+724;F;23;F;30;High School
+725;M;29;T;73;High School
+726;M;25;T;19;Undergraduate
+727;F;25;F;26;Graduate
+728;F;21;F;39;Undergraduate
+729;M;24;T;49;High School
+730;F;22;T;26;Undergraduate
+731;F;25;F;45;High School
+732;M;23;T;28;High School
+733;F;24;F;37;Undergraduate
+734;M;23;T;31;Graduate
+735;M;20;F;38;High School
+736;F;22;F;24;Graduate
+737;M;23;T;15;Graduate
+738;M;25;F;53;Undergraduate
+739;M;27;F;40;Graduate
+740;F;28;F;36;Undergraduate
+741;F;23;T;77;Graduate
+742;M;25;T;19;Graduate
+743;M;32;T;43;High School
+744;M;26;T;38;Graduate
+745;M;31;T;28;Graduate
+746;F;30;F;66;High School
+747;F;24;T;54;High School
+748;M;23;F;49;High School
+749;F;26;F;22;Undergraduate
+750;F;23;F;15;Graduate
+751;M;31;F;34;High School
+752;F;26;F;38;High School
+753;M;25;T;10;Undergraduate
+754;M;25;T;57;High School
+755;F;22;F;12;High School
+756;F;28;F;38;High School
+757;F;22;F;44;High School
+758;X;22;F;43;High School
+759;F;23;F;22;Undergraduate
+760;M;21;T;45;High School
+761;M;21;T;59;High School
+762;M;27;T;41;Graduate
+763;F;26;F;40;Undergraduate
+764;M;21;T;29;Undergraduate
+765;F;26;F;25;High School
+766;M;24;T;2;Undergraduate
+767;F;23;F;19;Graduate
+768;F;23;T;53;High School
+769;M;26;T;22;Undergraduate
+770;F;21;F;25;High School
+771;M;22;F;29;Graduate
+772;M;26;F;14;High School
+773;F;26;T;35;Undergraduate
+774;M;24;F;27;Graduate
+775;M;20;T;28;Undergraduate
+776;M;28;T;20;Graduate
+777;M;29;T;44;Undergraduate
+778;NA;21;F;52;Undergraduate
+779;F;23;T;38;Graduate
+780;M;25;F;13;High School
+781;M;31;T;36;High School
+782;M;21;T;30;Undergraduate
+783;M;24;F;18;Undergraduate
+784;F;27;F;63;High School
+785;F;23;F;38;High School
+786;F;25;T;5;High School
+787;F;27;T;32;Graduate
+788;F;20;F;21;High School
+789;M;27;F;23;Graduate
+790;M;23;T;8;High School
+791;M;24;T;36;Undergraduate
+792;F;29;F;49;Graduate
+793;F;23;T;40;Graduate
+794;M;21;T;40;Undergraduate
+795;M;22;T;30;Undergraduate
+796;F;21;F;32;Undergraduate
+797;F;22;F;37;Graduate
+798;F;22;F;28;Undergraduate
+799;X;22;F;17;High School
+800;F;23;F;24;High School
+801;M;26;T;23;High School
+802;M;28;F;51;High School
+803;F;26;F;18;High School
+804;F;26;F;56;High School
+805;F;24;F;21;Undergraduate
+806;M;24;T;25;High School
+807;M;28;F;63;Graduate
+808;M;30;F;41;Undergraduate
+809;M;23;T;31;High School
+810;F;24;T;48;Graduate
+811;F;25;F;16;Graduate
+812;F;26;T;26;High School
+813;F;20;F;56;Undergraduate
+814;F;29;T;27;Graduate
+815;F;22;F;27;Graduate
+816;F;24;T;53;High School
+817;M;20;F;24;High School
+818;M;21;F;72;Undergraduate
+819;M;27;T;34;Undergraduate
+820;F;31;T;75;High School
+821;M;29;T;59;High School
+822;F;23;F;19;Undergraduate
+823;F;21;F;20;High School
+824;F;28;F;38;High School
+825;F;20;F;47;Undergraduate
+826;M;22;T;17;High School
+827;M;23;F;58;Undergraduate
+828;F;25;F;58;High School
+829;F;27;T;14;Graduate
+830;F;23;T;47;Graduate
+831;M;27;T;63;Graduate
+832;F;21;F;34;Undergraduate
+833;M;29;T;36;High School
+834;F;24;F;23;High School
+835;F;21;T;37;Undergraduate
+836;M;24;F;20;High School
+837;F;32;F;25;High School
+838;F;26;F;8;High School
+839;F;23;F;11;High School
+840;M;25;T;25;High School
+841;M;23;T;18;High School
+842;M;27;T;30;Graduate
+843;M;22;T;33;High School
+844;F;24;F;25;Undergraduate
+845;M;24;F;18;High School
+846;F;22;F;24;High School
+847;F;24;F;16;Undergraduate
+848;M;23;T;26;Graduate
+849;M;20;T;41;Undergraduate
+850;M;21;F;28;Undergraduate
+851;M;24;F;9;High School
+852;M;19;T;54;High School
+853;F;26;F;53;High School
+854;M;24;F;64;High School
+855;F;22;F;34;High School
+856;F;21;F;29;Undergraduate
+857;M;24;T;47;Graduate
+858;M;35;T;49;High School
+859;F;26;F;26;High School
+860;M;23;F;19;High School
+861;F;24;F;31;High School
+862;F;29;F;43;Undergraduate
+863;M;21;T;52;Undergraduate
+864;F;22;T;63;Graduate
+865;F;27;T;23;High School
+866;M;25;T;32;Graduate
+867;F;23;F;31;Undergraduate
+868;M;26;F;20;Undergraduate
+869;M;26;F;31;Graduate
+870;M;27;T;13;Graduate
+871;F;22;T;29;Undergraduate
+872;F;25;F;47;High School
+873;F;28;F;42;High School
+874;M;25;T;20;High School
+875;F;23;F;24;High School
+876;M;22;T;18;High School
+877;F;30;T;61;Graduate
+878;F;29;F;100;High School
+879;F;30;T;11;Undergraduate
+880;F;21;F;37;Undergraduate
+881;F;22;F;14;High School
+882;M;23;F;41;High School
+883;F;21;T;19;Undergraduate
+884;F;24;T;61;Graduate
+885;M;25;T;33;Graduate
+886;NA;24;F;31;Graduate
+887;F;23;F;13;Undergraduate
+888;M;31;T;18;High School
+889;F;29;F;49;High School
+890;F;24;F;38;High School
+891;M;24;F;74;Graduate
+892;M;25;F;81;Undergraduate
+893;F;24;F;12;High School
+894;M;21;T;41;Undergraduate
+895;F;23;F;30;Graduate
+896;M;30;T;14;Graduate
+897;M;28;T;38;Undergraduate
+898;F;23;T;29;High School
+899;F;24;F;60;High School
+900;X;22;T;34;Undergraduate
+901;M;25;T;32;Graduate
+902;F;22;F;4;High School
+903;F;23;T;26;Graduate
+904;M;23;T;40;High School
+905;F;21;F;49;High School
+906;F;22;F;42;High School
+907;M;22;F;69;Graduate
+908;F;26;F;28;High School
+909;F;24;F;30;Undergraduate
+910;M;28;F;46;High School
+911;F;31;F;22;Undergraduate
+912;F;23;T;30;High School
+913;X;30;F;35;High School
+914;F;26;T;40;High School
+915;M;23;T;23;Graduate
+916;M;26;T;35;High School
+917;F;29;F;19;Graduate
+918;F;23;T;28;High School
+919;F;25;T;59;High School
+920;F;25;F;8;High School
+921;F;27;F;39;High School
+922;F;27;F;51;High School
+923;M;22;T;37;Graduate
+924;F;22;F;11;Graduate
+925;F;23;F;41;High School
+926;M;25;T;76;High School
+927;F;24;T;38;Graduate
+928;M;20;T;31;High School
+929;F;24;T;67;High School
+930;M;26;T;27;High School
+931;F;22;F;30;Undergraduate
+932;M;26;T;33;High School
+933;M;23;F;40;Graduate
+934;M;22;T;35;High School
+935;F;24;F;5;High School
+936;F;26;F;14;Undergraduate
+937;F;23;F;40;Undergraduate
+938;F;24;F;61;High School
+939;M;31;F;27;High School
+940;M;25;T;29;High School
+941;M;27;F;49;High School
+942;F;30;T;51;Graduate
+943;M;25;T;33;High School
+944;M;24;F;30;Graduate
+945;M;26;F;22;Graduate
+946;F;28;F;34;Graduate
+947;F;23;F;34;High School
+948;F;24;T;44;High School
+949;F;20;T;61;High School
+950;M;23;T;12;High School
+951;F;25;T;30;Graduate
+952;X;24;T;39;High School
+953;F;23;F;34;High School
+954;M;25;T;46;High School
+955;M;26;T;47;High School
+956;F;30;F;35;Undergraduate
+957;F;23;F;28;Graduate
+958;M;24;T;44;High School
+959;F;25;T;32;High School
+960;M;24;T;57;Graduate
+961;M;23;T;11;Undergraduate
+962;F;22;F;61;Graduate
+963;M;24;F;51;Graduate
+964;M;24;T;63;Undergraduate
+965;M;27;T;30;Undergraduate
+966;M;28;T;20;Graduate
+967;M;27;T;29;High School
+968;F;27;F;19;High School
+969;F;22;F;34;High School
+970;M;31;F;21;High School
+971;M;27;T;37;High School
+972;M;20;T;41;Undergraduate
+973;M;29;F;31;Undergraduate
+974;F;25;F;16;Undergraduate
+975;F;22;F;35;Undergraduate
+976;F;31;F;31;High School
+977;M;28;F;29;High School
+978;F;27;F;33;High School
+979;M;30;F;48;Graduate
+980;F;22;T;54;High School
+981;M;27;F;10;Undergraduate
+982;F;24;F;100;Undergraduate
+983;F;21;F;19;High School
+984;F;29;F;25;High School
+985;M;20;F;31;High School
+986;F;24;F;30;High School
+987;F;27;F;23;High School
+988;M;25;T;27;Graduate
+989;M;30;F;60;High School
+990;M;19;F;56;High School
+991;F;24;F;46;High School
+992;F;27;T;90;Graduate
+993;F;24;F;26;High School
+994;F;25;F;10;Undergraduate
+995;M;27;T;15;High School
+996;M;26;F;57;High School
+997;F;28;F;59;Graduate
+998;M;24;T;32;Undergraduate
+999;F;21;F;38;High School
+1000;M;22;T;40;High School
+1001;F;25;T;47;Graduate
+1002;F;21;F;58;Undergraduate
+1003;F;23;F;45;High School
+1004;F;22;F;48;High School
+1005;F;25;F;22;High School
+1006;F;29;F;45;Graduate
+1007;M;24;T;54;High School
+1008;X;21;F;53;High School
+1009;F;22;F;34;Graduate
+1010;F;28;T;75;High School
+1011;M;23;T;36;Undergraduate
+1012;F;27;F;61;High School
+1013;M;22;T;32;High School
+1014;F;29;F;55;High School
+1015;F;21;F;24;High School
+1016;M;24;T;13;Undergraduate
+1017;M;22;T;56;High School
+1018;F;29;T;27;High School
+1019;M;27;T;29;High School
+1020;F;24;F;88;Undergraduate
+1021;F;20;T;19;Undergraduate
+1022;M;24;T;13;Undergraduate
+1023;M;24;T;19;High School
+1024;M;25;T;22;Undergraduate
+1025;M;23;T;38;High School
+1026;M;21;F;33;High School
+1027;M;27;T;47;Undergraduate
+1028;M;28;F;26;High School
+1029;F;26;F;42;High School
+1030;M;22;F;73;Graduate
+1031;M;22;F;50;High School
+1032;M;20;F;21;High School
+1033;F;24;T;56;High School
+1034;M;21;F;19;High School
+1035;M;24;T;17;High School
+1036;M;22;F;38;High School
+1037;M;24;T;39;High School
+1038;M;23;T;64;High School
+1039;M;26;T;31;Graduate
+1040;X;25;F;17;Undergraduate
+1041;F;21;F;52;High School
+1042;M;28;F;35;High School
+1043;F;26;T;63;Undergraduate
+1044;M;22;T;30;Graduate
+1045;M;29;T;30;Graduate
+1046;F;25;F;13;High School
+1047;M;28;T;25;High School
+1048;M;24;T;33;Graduate
+1049;F;23;F;11;High School
+1050;F;21;F;23;High School
+1051;M;24;T;43;High School
+1052;F;22;T;48;Graduate
+1053;F;20;F;29;Undergraduate
+1054;F;29;T;62;High School
+1055;M;24;T;24;Undergraduate
+1056;F;32;F;20;High School
+1057;F;22;F;24;High School
+1058;M;21;T;65;Undergraduate
+1059;M;25;T;51;Graduate
+1060;M;29;T;29;Graduate
+1061;M;27;T;20;Graduate
+1062;F;21;T;51;High School
+1063;F;27;F;33;High School
+1064;F;24;F;42;Graduate
+1065;M;23;T;35;High School
+1066;F;27;F;30;Graduate
+1067;F;23;T;40;High School
+1068;M;27;T;15;Graduate
+1069;M;21;T;43;Undergraduate
+1070;M;34;T;45;High School
+1071;M;23;F;48;High School
+1072;M;27;T;14;High School
+1073;M;20;T;43;High School
+1074;F;24;F;62;Graduate
+1075;X;27;F;73;High School
+1076;F;25;T;10;High School
+1077;M;26;T;55;High School
+1078;M;32;T;26;High School
+1079;F;23;T;28;High School
+1080;F;24;T;33;High School
+1081;F;20;F;35;Undergraduate
+1082;F;26;F;34;Undergraduate
+1083;F;23;T;30;High School
+1084;NA;24;F;13;High School
+1085;X;25;F;45;Graduate
+1086;M;29;T;22;High School
+1087;M;23;T;63;Graduate
+1088;M;25;T;38;High School
+1089;M;21;T;38;Undergraduate
+1090;M;26;T;63;High School
+1091;F;32;F;24;Graduate
+1092;F;24;F;13;High School
+1093;M;30;T;49;Undergraduate
+1094;F;26;F;43;High School
+1095;M;22;T;45;High School
+1096;F;21;F;15;High School
+1097;M;27;T;16;Undergraduate
+1098;M;26;T;25;Undergraduate
+1099;F;25;F;53;Graduate
+1100;M;23;F;23;High School
+1101;M;24;T;11;High School
+1102;M;26;T;43;High School
+1103;M;21;T;62;High School
+1104;F;24;F;21;Undergraduate
+1105;M;23;F;30;Undergraduate
+1106;F;25;F;68;High School
+1107;F;21;F;23;High School
+1108;F;26;T;48;Undergraduate
+1109;F;28;F;27;Graduate
+1110;F;24;F;23;High School
+1111;F;26;T;22;High School
+1112;M;22;F;31;High School
+1113;M;29;T;27;High School
+1114;F;28;F;24;High School
+1115;F;23;F;30;Graduate
+1116;F;27;T;16;High School
+1117;M;27;T;42;High School
+1118;M;21;T;18;High School
+1119;M;28;F;92;High School
+1120;F;25;F;39;Graduate
+1121;F;21;F;35;High School
+1122;F;27;F;49;Graduate
+1123;F;26;T;21;Graduate
+1124;M;22;T;16;High School
+1125;F;36;F;51;High School
+1126;M;23;T;38;High School
+1127;F;31;T;78;Graduate
+1128;F;25;F;83;High School
+1129;M;22;T;65;Graduate
+1130;M;21;T;16;Undergraduate
+1131;M;25;F;33;Graduate
+1132;F;31;T;33;Undergraduate
+1133;M;24;F;34;Graduate
+1134;F;25;T;39;Graduate
+1135;M;25;F;46;High School
+1136;M;23;F;50;Graduate
+1137;F;22;T;22;Graduate
+1138;F;27;F;29;Graduate
+1139;M;22;T;49;Undergraduate
+1140;F;20;F;34;Undergraduate
+1141;F;26;F;40;Undergraduate
+1142;M;26;T;23;High School
+1143;M;22;T;22;High School
+1144;F;22;F;8;Undergraduate
+1145;F;23;F;44;Graduate
+1146;M;26;F;40;High School
+1147;M;34;F;13;High School
+1148;M;27;F;23;Graduate
+1149;F;22;T;14;Undergraduate
+1150;F;27;T;14;Graduate
+1151;M;26;T;54;Graduate
+1152;F;25;F;34;Graduate
+1153;M;22;F;23;High School
+1154;X;27;F;47;High School
+1155;M;22;T;56;Undergraduate
+1156;F;27;F;52;High School
+1157;M;27;F;9;Graduate
+1158;M;26;T;77;High School
+1159;F;23;F;55;Undergraduate
+1160;F;24;F;27;High School
+1161;M;25;T;23;High School
+1162;F;27;F;18;Graduate
+1163;F;27;T;21;High School
+1164;M;22;T;35;High School
+1165;F;24;F;46;High School
+1166;M;20;T;7;Undergraduate
+1167;M;22;F;32;High School
+1168;F;23;F;58;Undergraduate
+1169;F;24;F;27;Graduate
+1170;F;25;T;23;Graduate
+1171;F;29;F;46;Graduate
+1172;F;30;F;4;Undergraduate
+1173;F;22;F;37;High School
+1174;F;23;F;32;High School
+1175;F;22;F;8;High School
+1176;F;25;F;20;Graduate
+1177;M;31;T;32;Graduate
+1178;M;28;F;35;High School
+1179;M;21;T;21;Undergraduate
+1180;F;22;F;31;Graduate
+1181;F;22;T;44;Graduate
+1182;M;25;T;45;Graduate
+1183;M;24;T;59;High School
+1184;F;26;F;17;High School
+1185;F;24;T;19;High School
+1186;F;24;F;37;Graduate
+1187;M;23;T;30;High School
+1188;M;22;T;24;High School
+1189;F;22;F;22;Graduate
+1190;F;26;F;51;High School
+1191;M;25;T;16;Undergraduate
+1192;F;29;T;84;Undergraduate
+1193;F;27;T;29;High School
+1194;M;25;T;10;Graduate
+1195;M;29;T;22;High School
+1196;M;27;F;36;High School
+1197;M;22;T;25;High School
+1198;M;22;T;70;Graduate
+1199;M;24;F;29;High School
+1200;M;24;F;41;High School
+1201;M;29;T;100;Undergraduate
+1202;M;28;T;9;Graduate
+1203;M;25;F;28;Undergraduate
+1204;M;19;F;50;High School
+1205;F;22;T;48;Graduate
+1206;M;23;T;15;Graduate
+1207;F;27;F;35;Graduate
+1208;F;22;F;47;High School
+1209;X;23;F;36;High School
+1210;M;29;T;29;Undergraduate
+1211;F;27;F;40;High School
+1212;F;22;F;32;Undergraduate
+1213;F;27;F;34;High School
+1214;F;22;T;71;High School
+1215;M;27;T;33;Undergraduate
+1216;M;24;T;19;High School
+1217;F;25;T;52;Graduate
+1218;F;23;F;13;High School
+1219;M;23;T;58;High School
+1220;NA;25;T;49;High School
+1221;M;22;F;26;Graduate
+1222;F;22;T;22;Undergraduate
+1223;M;23;F;64;Undergraduate
+1224;M;25;T;39;Graduate
+1225;M;23;T;44;High School
+1226;M;26;T;25;High School
+1227;M;23;T;100;High School
+1228;F;31;F;13;Graduate
+1229;M;28;T;23;High School
+1230;F;23;F;33;High School
+1231;F;20;F;56;Undergraduate
+1232;M;28;F;31;High School
+1233;M;28;F;80;Graduate
+1234;M;28;F;50;Undergraduate
+1235;M;22;F;16;Undergraduate
+1236;M;25;T;22;High School
+1237;M;26;T;24;Graduate
+1238;M;24;T;48;High School
+1239;M;26;T;19;High School
+1240;F;26;T;21;Undergraduate
+1241;M;22;T;48;High School
+1242;M;23;F;23;Graduate
+1243;F;23;T;27;Graduate
+1244;F;23;F;43;High School
+1245;M;31;T;25;High School
+1246;M;24;F;36;Undergraduate
+1247;F;20;F;21;Undergraduate
+1248;M;29;T;27;High School
+1249;M;24;T;43;Undergraduate
+1250;F;28;F;30;Graduate
+1251;F;29;F;46;High School
+1252;M;30;F;55;High School
+1253;F;26;T;57;High School
+1254;F;30;F;50;Graduate
+1255;M;21;F;31;Undergraduate
+1256;F;29;F;58;High School
+1257;M;33;F;31;High School
+1258;M;30;F;41;High School
+1259;M;25;T;40;High School
+1260;M;29;T;23;Graduate
+1261;M;22;T;34;High School
+1262;M;23;T;32;High School
+1263;M;24;T;35;High School
+1264;F;25;T;13;High School
+1265;M;24;T;54;High School
+1266;M;22;T;29;Undergraduate
+1267;M;29;F;15;Graduate
+1268;F;26;T;41;Graduate
+1269;F;23;T;74;Graduate
+1270;M;34;T;16;Undergraduate
+1271;F;24;F;7;Graduate
+1272;NA;23;T;45;Graduate
+1273;M;29;T;83;Undergraduate
+1274;F;21;F;54;High School
+1275;M;28;F;64;Graduate
+1276;F;26;F;32;Graduate
+1277;F;24;F;34;Graduate
+1278;F;28;F;45;High School
+1279;F;22;F;9;Undergraduate
+1280;M;25;T;22;High School
+1281;F;24;T;31;Graduate
+1282;F;24;F;24;Undergraduate
+1283;F;31;T;21;High School
+1284;F;27;T;35;Graduate
+1285;F;22;F;29;Graduate
+1286;F;27;F;56;High School
+1287;M;25;T;22;High School
+1288;F;34;F;12;High School
+1289;F;20;T;36;High School
+1290;F;23;F;36;High School
+1291;M;27;F;56;Graduate
+1292;M;25;F;26;High School
+1293;F;25;T;65;High School
+1294;M;31;F;48;Undergraduate
+1295;M;23;T;62;Undergraduate
+1296;M;22;T;30;Graduate
+1297;F;22;F;24;Graduate
+1298;M;28;T;42;Undergraduate
+1299;F;28;F;19;Undergraduate
+1300;F;26;F;27;High School
+1301;F;23;F;22;High School
+1302;F;22;F;22;High School
+1303;F;26;F;44;Undergraduate
+1304;M;32;T;33;High School
+1305;M;25;F;32;Graduate
+1306;M;26;T;29;Undergraduate
+1307;F;31;F;39;Graduate
+1308;M;24;T;7;Graduate
+1309;M;21;T;94;Undergraduate
+1310;M;29;T;67;High School
+1311;M;26;F;19;High School
+1312;F;22;T;22;Graduate
+1313;F;23;F;39;High School
+1314;M;24;T;16;High School
+1315;M;26;T;13;High School
+1316;F;24;F;30;Undergraduate
+1317;M;25;T;11;Graduate
+1318;M;23;T;57;High School
+1319;F;30;T;26;Undergraduate
+1320;F;26;F;69;Undergraduate
+1321;F;27;F;12;High School
+1322;F;29;T;31;Graduate
+1323;F;31;T;18;High School
+1324;F;30;F;21;High School
+1325;F;26;F;23;Graduate
+1326;F;24;F;20;Undergraduate
+1327;M;25;T;40;Graduate
+1328;F;25;F;25;Graduate
+1329;M;27;T;43;Undergraduate
+1330;M;32;F;33;High School
+1331;M;26;T;35;High School
+1332;M;29;T;24;Undergraduate
+1333;M;30;T;43;High School
+1334;M;23;T;29;Graduate
+1335;F;24;F;23;Graduate
+1336;M;23;T;33;High School
+1337;M;24;F;18;High School
+1338;M;27;T;48;High School
+1339;M;22;F;34;High School
+1340;X;25;T;38;Undergraduate
+1341;F;22;F;16;Graduate
+1342;F;28;F;25;High School
+1343;F;25;F;65;High School
+1344;M;23;T;20;Undergraduate
+1345;M;22;T;26;Undergraduate
+1346;M;24;F;28;High School
+1347;F;23;F;9;High School
+1348;F;23;T;41;High School
+1349;M;27;T;63;High School
+1350;M;29;T;45;High School
+1351;X;20;F;22;Undergraduate
+1352;F;24;F;39;High School
+1353;M;22;F;52;Undergraduate
+1354;F;19;F;9;High School
+1355;F;25;T;38;Graduate
+1356;M;24;T;24;High School
+1357;F;23;F;46;High School
+1358;M;26;F;42;Graduate
+1359;M;23;T;38;Graduate
+1360;F;20;F;62;Undergraduate
+1361;M;23;T;22;Undergraduate
+1362;M;22;T;24;High School
+1363;M;23;T;31;Undergraduate
+1364;F;26;F;21;Graduate
+1365;F;26;F;13;Undergraduate
+1366;M;27;T;33;High School
+1367;F;24;F;65;Undergraduate
+1368;F;25;T;78;High School
+1369;F;26;F;11;High School
+1370;F;22;T;50;High School
+1371;M;29;F;37;Undergraduate
+1372;F;24;T;25;High School
+1373;F;27;F;25;Undergraduate
+1374;F;23;F;38;Graduate
+1375;F;21;T;85;High School
+1376;F;20;T;8;High School
+1377;F;22;F;31;High School
+1378;M;22;T;52;Undergraduate
+1379;M;31;T;54;Graduate
+1380;F;23;F;50;Undergraduate
+1381;X;24;T;27;Undergraduate
+1382;F;29;T;54;High School
+1383;F;24;F;21;High School
+1384;M;23;T;58;Graduate
+1385;M;27;T;7;Graduate
+1386;F;23;F;60;High School
+1387;M;23;T;10;Undergraduate
+1388;F;23;T;78;High School
+1389;F;26;F;72;High School
+1390;M;22;F;47;High School
+1391;M;25;T;34;High School
+1392;M;24;T;37;Graduate
+1393;F;23;T;15;Undergraduate
+1394;F;26;F;38;Graduate
+1395;F;22;F;21;High School
+1396;F;26;F;27;Graduate
+1397;M;30;T;30;Undergraduate
+1398;NA;21;F;39;High School
+1399;F;26;F;57;High School
+1400;F;23;F;11;Graduate
+1401;F;29;F;15;Graduate
+1402;M;26;T;100;Graduate
+1403;M;25;T;24;Graduate
+1404;F;22;T;15;Graduate
+1405;F;27;F;46;High School
+1406;F;22;F;25;Graduate
+1407;M;20;T;74;High School
+1408;F;25;F;28;Graduate
+1409;M;27;F;61;High School
+1410;M;22;T;42;High School
+1411;F;32;T;43;Graduate
+1412;M;24;F;47;High School
+1413;F;21;F;41;High School
+1414;F;26;F;17;High School
+1415;M;24;F;21;High School
+1416;F;25;F;9;Graduate
+1417;M;28;T;39;Undergraduate
+1418;M;22;F;19;Undergraduate
+1419;F;29;F;38;Undergraduate
+1420;F;24;T;49;Graduate
+1421;F;25;F;33;High School
+1422;M;30;T;26;Undergraduate
+1423;M;23;T;14;High School
+1424;F;22;F;22;High School
+1425;F;26;F;46;High School
+1426;M;31;F;22;Graduate
+1427;F;25;F;31;High School
+1428;F;24;F;54;Undergraduate
+1429;F;23;F;12;High School
+1430;F;27;T;33;Undergraduate
+1431;F;22;T;25;High School
+1432;F;21;F;15;High School
+1433;M;24;T;26;High School
+1434;NA;27;F;29;Undergraduate
+1435;M;28;F;18;High School
+1436;M;33;T;31;Graduate
+1437;F;26;F;32;Undergraduate
+1438;F;23;F;47;High School
+1439;F;29;T;26;Undergraduate
+1440;M;24;T;42;Graduate
+1441;M;22;T;13;High School
+1442;M;24;F;35;Graduate
+1443;X;30;F;24;Graduate
+1444;F;22;F;51;Graduate
+1445;M;23;T;27;High School
+1446;M;28;T;75;Graduate
+1447;M;24;T;13;High School
+1448;M;22;F;19;High School
+1449;X;27;T;26;High School
+1450;M;24;T;25;Graduate
+1451;M;27;F;5;Undergraduate
+1452;M;26;T;21;High School
+1453;F;26;F;23;Undergraduate
+1454;M;22;T;55;High School
+1455;M;26;T;34;Undergraduate
+1456;M;25;F;43;High School
+1457;M;25;T;24;Undergraduate
+1458;F;21;F;27;High School
+1459;M;25;F;67;High School
+1460;F;20;F;27;High School
+1461;M;26;F;23;High School
+1462;F;32;T;62;Graduate
+1463;F;22;F;44;High School
+1464;F;29;F;44;Graduate
+1465;F;24;F;63;Undergraduate
+1466;M;27;F;7;Graduate
+1467;M;25;T;49;Graduate
+1468;F;22;F;34;Graduate
+1469;M;20;T;56;High School
+1470;M;25;F;68;Undergraduate
+1471;M;23;T;15;High School
+1472;M;23;T;4;High School
+1473;F;22;F;32;High School
+1474;M;22;F;38;Undergraduate
+1475;M;30;T;100;Graduate
+1476;M;26;T;28;Undergraduate
+1477;M;28;F;60;Undergraduate
+1478;M;24;T;62;High School
+1479;F;21;F;46;High School
+1480;F;29;F;32;High School
+1481;F;32;F;35;Undergraduate
+1482;M;27;T;15;Undergraduate
+1483;F;30;F;23;Graduate
+1484;M;24;T;44;High School
+1485;F;21;F;9;Undergraduate
+1486;F;24;T;23;High School
+1487;M;19;F;22;High School
+1488;F;24;F;38;Graduate
+1489;F;27;F;53;Graduate
+1490;M;23;T;27;High School
+1491;F;20;F;15;Undergraduate
+1492;M;23;T;19;High School
+1493;F;27;F;28;High School
+1494;M;21;F;58;High School
+1495;X;26;T;52;Graduate
+1496;M;24;T;100;High School
+1497;M;24;T;67;Undergraduate
+1498;F;25;F;60;High School
+1499;M;26;T;23;Graduate
+1500;F;25;T;45;Undergraduate
