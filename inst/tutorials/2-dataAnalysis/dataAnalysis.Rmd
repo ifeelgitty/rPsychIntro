@@ -1,5 +1,5 @@
 ---
-title: "R Notebook"
+title: "A Primer to R - Example Data Analysis"
 output: html_notebook
 ---
 
@@ -8,14 +8,10 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
-plot(cars)
+print("Hello World!")
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Great! Now let's prepare the workbook by emptying the current RStudio environment and setting the working path:
 
 ```{r}
 # Empty current environment
@@ -24,6 +20,16 @@ rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 getwd()
 ```
+
+# Install Libraries
+
+Throughout this workbook, we will work with multiple external libraries (So, collection of code other people have written, so you don't have to). Let's install them:
+
+```{r}
+install.packages("ggplot2") #For excessive plots!
+install.packages("moments") #For checking how normal data is!
+```
+
 
 # Importing the data
 
@@ -49,8 +55,8 @@ What's happening here? we define the new variable *raw_user* with *<-*. The *rea
 Now it's your turn, based on the code/function above, read the remaining two files, *creat_task.csv* and *iq_dat.csv*. The structure of those files is the same, so it also has the *;*-separator.
 
 ```{r}
-raw_creat <- read.csv("data//creat_task.csv", sep = ";")
-raw_iq <- read.csv("data//iq_dat.csv", sep = ";")
+raw_creat <- # Add code here
+raw_iq <- # and here :)
 ```
 
 # Investigating the data
@@ -103,13 +109,13 @@ This first gives you the number of rows and then the number of columns.
 It's wake-up time again! To move on, check whether the creativity test data in *raw_creat* is the same data type as the user data:
 
 ```{r}
-class(raw_creat)
+
 ```
 
 Looks good! Now let's investigate the structure of it, so the head of the data:
 
 ```{r}
-head(raw_creat)
+
 ```
 
 Quite obviously, we do have a very similar structure with a lot less variables:
@@ -120,7 +126,7 @@ Quite obviously, we do have a very similar structure with a lot less variables:
 Let's make sure that the number of participant entries actually matches the number we've seen in the previous data:
 
 ```{r}
-nrow(raw_creat)
+
 ```
 
 Looking good!
@@ -130,18 +136,18 @@ Looking good!
 Let's shortly check the raw_iq file as well, not expecting many surprises here. You know, if there is a head, there must also be a tail! Let's check this by using a *tail()* function, the same way we used the head one:
 
 ```{r}
-tail(raw_creat)
+
 ```
 
-As expected, it shows the last, instead of the first rows. We can already see that something's wrong here though: The number of rows does not match the expected ids, it's somehow... less. However, we do at least have the variable *iq*, conveniently indicating the, well, IQ of the participant.
+As expected, it shows the last, instead of the first rows. We now have the variable *iq*, conveniently indicating the, well, IQ of the participant.
 
 So, what about the rows? Are there entrys missing? Let's check whether the number of rows is correct:
 
 ```{r}
-nrow(raw_iq)
+
 ```
 
-Indeed, there are too few rows, indicating that we are missing some of the data from the participants! We will deal with that later, but you can already see that checking your data appropiately can give you early, important insights that you might need before aimlessly moving on!
+Yep, that checks out!
 
 # Merging the data frames
 
@@ -164,17 +170,557 @@ Indeed, we now basically have all the data in one, big data frame! Well, all but
 By the same logic used above, add the iq scores found in *raw_iq* to the big dataframe in *dat*, meaning that you have to merge both of them the same way we did this above, also merging it by the subject id!
 
 ```{r}
-dat <- merge(dat, raw_iq, by="id")
+dat <- # merge here!
 ```
 
 Again, check whether everything went well by checking the head of the data:
 
 ```{r}
-head(dat)
+
 ```
 
-Neat! Although we shouldn't forget that there are missing values, after all...
+Neat!
 
 # Preprocessing and Cleaning the data
 
-We now have all the data neatly in one data frame. Before we start analyzing, we need to properly clean the data and investigate whether everything is ok with it, though. 
+We now have all the data neatly in one data frame. Before we start analyzing, we need to properly clean the data and investigate whether everything is ok with it, though.
+
+One way of getting a basic overview of the statistics, distribution and type of variables within a data frame comes through the function *summary()*, which neatly summarizes the data, adding valuable information to the *head()* that we've used before. Let us check the summary of the data.
+
+```{r}
+summary(dat)
+```
+
+We can make some observations here already, leading to changes in the data we need to do:
+
+* sex and education are strings/characters. The problem with this is: We know that both variables are basically just a limited amount of groups, for example: The education can be distributed into "High School", "Undergraduate" and "Graduate", however R at the moment treats them like independent strings without any groupings. We need to convert these to *factors*, a different class, to make them usable for our analysis.
+* We can see the range, median, mean and quartiles of the numeric variables, age, schizo_Score, creative_task and iq.
+* *schizo_Score* has an inconsistent naming due to the *Score* being capitalized, we should change that to standardize all variables.
+
+# More Access to DataFrames!
+
+Let's get some insights about sex! So when the birds or the bees do.... Okay, the variable Sex. If we just want to access this column and all of its values, we have two options. First, we can *access a column by name*. The logic here is to indicate the name of the column after putting the sign *$* in, so: *name_of_dataframe$name_of_column*. So, to print/retrieve all entries of the column sex, we write:
+
+```{r}
+dat$sex
+```
+
+We can see that it prints a lot of values, "M", "F" and some less common ones, it would indeed not be recommendable to analyze these by hand.
+
+Another way of accessing it is via the *index of the column*. We do know that sex was the second column, right after ID, therefore we can write the following:
+
+```{r}
+dat[,2]
+```
+
+Indexing columns or rows in the dataframe can be done using the *[]*-brackets, as seen above. We do obviously have columns and rows, so the two indeces have to be separated by a comma, with the row first and the column second, so *[row_index,column_index]*. If you just want all rows or all columns, you leave the part empty, as visible in our example above. We want all rows of column 2, so the accessor was *[,2]*!
+
+Let's check out some more examples. Let's just take the first row's value of column 2:
+
+```{r}
+dat[1,2]
+```
+
+Yep, that works!. We can also retrieve the first, let's say 30, by using the range operator from the first session, *:*:
+
+```{r}
+dat[1:30,2]
+```
+
+Awesome! If we don't want a range, but very specific rows or columns, we can access those by putting them in a list. So, if we want the first 30 participant entries including their sex and education, we can do the following
+
+```{r}
+dat[1:30, c(2,6)]
+```
+
+Convenient! 
+
+# Changing to Factor
+
+Now that we've gotten the hang of accessing data in data frames, let's finally prepare our data for analysis, starting with the sex of participants.
+
+To investigate the basic information, we can get a *summary()* of the column by doing the following:
+
+```{r}
+summary(dat$sex)
+```
+
+We already found this as part of the whole information of the *summary(dat)*, but we can see again that the column is indeed a string/character. We, however, want it as a factor, so R knows that each *"M"* in the column isn't just a string, it is one category with all *M*s representing instances that belong to the same category, males. We want the column as factor, so the function we need to use is *as.factor()*:
+
+```{r}
+dat$sex <- as.factor(dat$sex)
+summary(dat$sex)
+```
+
+The summary now shows each of the so-called levels of the factor and how often it occurs in the column, with Male, Female, Others(X) and NA, representing missing values, on the list.
+
+We can explicitly check what levels a factor has:
+
+```{r}
+levels(dat$sex)
+```
+
+This neatly lists all three levels, with *"NA"* NOT being a level, as missing values aren't really a level, they are just, well, missing values. We can even list the number of levels:
+
+```{r}
+length(levels(dat$sex))
+```
+
+Three, which, yeah, we could've counted ourselves...
+
+## Convert education to a factor
+
+Now, let's do the same conversion for education. First, convert the column to a factor, the same way we did above and check the summary of the column:
+
+```{r}
+dat$education <- 
+```
+
+Let's also print all levels of the factor education now:
+
+```{r}
+
+```
+
+To be fair, the summary kind of gave that away, but good job!
+
+Finally, we also need to convert *id* to factor. Why? If we kept it as an integer, we would assume that the number assigned to each participant has a meaning, so the id 100 is in some way double of something of the subject id 50, we could basically calculate statistics on those numbers, which is not the case.
+
+```{r}
+
+```
+
+## Renaming a Column
+
+Let us first check the names of the columns again, using *colnames()*:
+
+```{r}
+colnames(dat)
+```
+
+Renaming the column can be quite annoying, so we will just execute the following code and then explain it:
+
+```{r}
+names(dat)[names(dat) == "schizo_Score"] <- "schizo_score"
+colnames(dat)
+```
+
+what do we do here? We apply the name/string *"schizo_score"* to the names in dat, so *names(dat)* which equal "schizo_Score", by using the accessor *[]*. Just try to remember all of these concepts from the first session and you'll understand why this works. In practice of course, you can always just google "renaming columns data frame in R", but it makes sense to understand what's going on.
+
+Okay, let's check the summary of our data, now that we've made all changes:
+
+```{r}
+summary(dat)
+```
+
+# Investigating the Descriptives!
+
+## IQ
+
+Let's start with investigating the distribution of IQ in our participants. Let us again check the summary of the variable:
+
+```{r}
+summary(dat$iq)
+```
+
+We can see that the mean is certainly higher than the 100 of the population, not surprising considering that we have a student population - and that the data is fake data, of course...
+
+One important thing to make sure with numeric values is checking the distribution. We will not go into details, but you should know that having a Normal, or Gaussian Distribution is very helpful, as it allows us to do lots of standard statistical analyses. 
+We can get a first idea of whether the distribution by plotting the histogram. The easiest, but probably ugliest way of achieving this is using R's own function *hist()*:
+
+```{r}
+hist(dat$iq)
+```
+
+That kinda looks normal, albeit ugly. A more advanced way of plotting the data uses the package *ggplot*. This allows us to create more complex, but also more beautiful plots, including but not limited to histograms. The most basic histogram of the same data as above looks as follows:
+
+```{r}
+library(ggplot2)
+iq_hist <- ggplot(dat, aes(iq)) + geom_histogram()
+iq_hist
+```
+
+How does the code work? the *ggplot()* function creates a new plot, with *dat* as argument. *aes()* defines what data is plotted, this can be more than this one dimension, for example if we want to plot the relationship of two variables, but here we just plot *iq*. Finally, we decide what is plotted by adding *geom_histogram()* to it, which unsurprisingly adds a histogram. 
+
+Bear in mind that the distribution doesn't necessarily look the same as the first one and can look quite weird due to the choice of *bins*, which is the number of segments we distribute the data into. That doesn't mean it is not normally distributed though. We can change the number of bins by changing the *bin*-parameter.You should then also understand what "bins" refers to :) 
+
+
+```{r}
+iq_hist <- ggplot(dat, aes(iq)) + geom_histogram(bins = 12)
+iq_hist
+```
+With 12 bins, you can see that the data looks scarily gaussian, however we obviously also compressed the data into less bins, so any weirdness within any of those bins wouldn't be represented in this histogram. 
+
+To get an even better visualization of the distribution, not having to rely on those histogram-bins, let's check the *geom_density()*, which is a more continuous density estimation of the data.
+
+```{r}
+iq_dens <- ggplot(dat, aes(iq)) + geom_density()
+iq_dens
+```
+
+This looks quite normal indeed! A further option to check normality is to plot a Quantile-Quantile, or Q-Q Plot. Again,without going into the theory, if the residuals which are represented as dots follow the line, it indicates a normal distribution.
+
+```{r}
+qqnorm(dat$iq)
+qqline(dat$iq)
+```
+
+That's one (nearly) straight line!
+
+We can further use different statistical tests to check if the sample is normally distributed. There are a lot of tests available and again, we are not going to go into the details of each of them, but will do one test of kurtosis and one test of skewness. We will use the *moments*-package for this:
+
+
+```{r}
+library(moments)
+
+skewness(dat$iq)
+kurtosis(dat$iq)
+```
+
+The data is unskewed at 0, so our skewness value is quite small, only indicating a minimal skew to the right, but not more than would be expected. A Kurtosis of 3 would be considered normal, so we are still in the range of what is expected. Different cutoff points have been described for what is acceptable, but they are ultimately highly debatable.
+
+More precise statistical tests to test normality are available, which do give you a statistical significance value. We will use the Shapiro-Wilk normality test as an example, which checks if your distribution is significantly different from a normal, gaussian distribution. If the test returns significant, it is statistically different from a normal distribution, meaning that it  However, if violated, they do not tell you why exactly the distribution is not deemed significant. 
+
+```{r}
+shapiro.test(dat$iq)
+```
+
+As the Shapiro-Wilk normality test does not return significant, we can assume that the distribution is indeed normal.
+
+Again, limitations of different normality tests are important to note and not part of this tutorial.
+
+# Investigating Schizo and Creativity Scores
+
+Now it's your turn again! We will investigate the test score distributions participants scored on both the schizophreny test and the creativity test. Let's first plot the histogram of the *schizo_scores* using *ggplot*.
+
+```{r}
+schizo_hist <- 
+```
+This looks a bit skewed to the right, doesn't it? Let's check with a density plot!
+
+```{r}
+schizo_dens <- 
+```
+
+And confirm our suspicion using the QQ-Plot:
+
+```{r}
+
+```
+
+Yes, that very much looks skewed to the right indeed, due to the curvature. Sidenote: The right-top values being nearly a line indicates that we deal with a ceiling effect, meaning: The test only goes to a score of 100, those participants statistically would score higher though.
+
+We can now check the skewedness and kurtosis statistically, as we have done before:
+
+```{r}
+
+```
+
+Both the skew and the kurtosis are worse than for our IQ values, indicating that the sample is not normally distributed and has a skew. Let's now do the Shapiro Wilks Normality test:
+
+```{r}
+
+```
+
+That is indeed highly significant, indicating the obviously non-normal distribution of data.
+
+## Correcting for non-normality!
+
+Again, ignoring limitations and theoretical backgrounds, we can correct for a right skew by taking the square root of each value, using the function *sqrt()*. We will create a new column, called *schizo_norm* for these unskewed values (although they have technically not been normalized).
+
+```{r}
+dat$schizo_norm <- sqrt(dat$schizo_score)
+qqnorm(dat$schizo_norm)
+qqline(dat$schizo_norm)
+```
+
+Doesn't look perfect, but certainly a lot less skewed! Again, before you correct for skewness in real-life applications, always make sure that it is statistically valid, as well as necessary, as not all models actually require you to have normally distributed data. Let's check the Shapiro-Wilks value:
+
+```{r}
+shapiro.test(dat$schizo_norm)
+```
+
+Well, it's still not normal and we could fine-tune the data more, but this will do for our purposes. In real-life applications though, rather pay attention to what your tests require the data to look like. Often, non-normal data does not prohibit an analysis, but rather has to be seen as a limitation, and often there are alternatives to well-known tests available which do not require you to have normally distributed data at all.
+
+Due to time constraints (and the complexity of the variable... trust me...) we won't take a look at creativity scores, but don't ever do that in real analyses!
+
+# Distribution of Categorical Variables
+
+Let's take a look at the distribution of the categorical variables. A good visual indication of the distribution of categorical variables comes through a barplot. Let's investigate how education is distributed amongst our participants:
+
+```{r}
+edu_barplot <- ggplot(dat, aes(education)) + geom_bar()
+edu_barplot
+```
+
+A bit... grey, isn't it? You can customize graphs in a lot of ways! You can specify the *fill*-parameter in the *aes()* to "fill" the colors according to the values of the input variable/column, which also automatically creates a legend:
+
+```{r}
+edu_barplot <- ggplot(dat, aes(education, fill=education)) + geom_bar()
+edu_barplot
+```
+
+## Investigating Sex and Gaming
+
+In the same way, let us investigate the distribution of the categorical variables "sex" and "gaming". First, create a barplot of your liking of the variable "sex":
+
+```{r}
+sex_barplot <- ggplot(dat, aes(sex, fill=sex)) + geom_bar()
+sex_barplot
+```
+
+Looks relatively evenly distributed between males and females, with some missing and some "other" values chosen.
+
+Now, do the same with the gaming variable:
+
+```{r}
+gaming_barplot <- 
+```
+
+Seems like the majority is not into gaming, although we will not statistically test this assumption.
+
+After getting a basic overview over the data, it's now time to do some statistical magic!
+
+# Effect of Sex on Creativity
+
+Have you ever wondered whether men or women are more creative? Me neither! Let's check it anyway, using one of the most basic test available to us, a t-test, and plotting the result. We will carelessly ignore the existence of other sex identities for this analysis, cause t-tests are really socially unwoke insensitive binary tests, booo!
+
+## T Test
+
+Let's to a Welch Two Sample t-test, simply done by using *t.test()*. For this, we now need to understand how statistical models in R work. What we are interested in is, how the dependent variable *creative_task* depends on the variable *sex*. In R, we first write the dependent variable, then a *~*, meaning "depends on" and then add the formula we want to check, in this case just the very simple variable *sex*. The formula therefore is *creative_task ~ sex*. Now, we need to also restrict our data to cases where the sex equals Male or Female and do this by restricting *dat* to instances where *dat$sex* is in the list *c("M", "F")*, which can be checked using *%in%*. That excludes all rows where the sex-column either is not available, NA, or other, X.
+
+```{r}
+t.test(creative_task ~ sex, data = dat[dat$sex %in% c("M", "F"),])
+```
+
+By golly, the mean on the creativity test for men is higher than for women and the p-value is below .05, meaning the difference is statistically significant! That must mean that men are more creative, we've settled a thousands-years old debate no one cared about! Right...? Well, let's first visualize this result, before we further evaluate it.
+
+One option to plot differences between groups is the *pirateplot*. This is a modified version of a boxplot with some neat extras, which you will see in the following:
+
+```{r}
+library(yarrr)
+pirateplot(formula = creative_task ~ sex, data = dat[dat$sex %in% c("M", "F"),])
+```
+
+The pirateplot is defined using the same formula as used in the t-test, neat! The resulting plot has multiple insightful elements. You can see the different instances of values as points, which isn't of much help here considering the vast amount of values on each score. Therefore, we have a *bean*, which is the surrounding, colored density curve representing the distribution of data, obviously thickening in the middle and thinning out on the outside. Further, we have the black, thick line in the middle, representing the mean, and barely visible, the band, the only slightly visible rectangle surrounding the mean, which represents the confidence interval. The reason for why the confidence interval is not much visible here is simply that it's narrow, so we have enough data to be confident that the mean is quite accurate.
+The plot itself shows us that, indeed, men scored better than women, albeit not by a lot, but still significantly so. So, are men more creative than women? We will postpone that question to later...
+
+We will abandon the discussion about sex and gender here, but will return soon!
+
+# Effect of Gaming on Creativity
+
+It's your turn now! Let's investigate the effect of gaming on creativity, the same way we investigated the effect of sex on it.
+
+Let us first do a Welch's t-test to check whether there are differences between gamers and non-gamers in regards to the creativity scores. Do this now and check the results after. Be aware that for this, we can use the whole dataset *dat* and DO NOT have to restrict it to male and female participants:
+
+```{r}
+
+```
+
+As the output shows you, there indeed is a highly significant difference between gamers and non-gamers! The sample estimates show you that the mean in the group *TRUE*, so gamers, is higher than the mean for *FALSE*, so non-gamers. The t-test therefore shows that gamers are more creative than non-gamers! Let's visualize this by creating a pirateplot, like we did before:
+
+```{r}
+
+```
+Unsurprisingly, this visualizes the finding that gamers score higher on creativity than non-gamers. Bwoah!
+
+One note on this result: While this is fake data, this finding actually replicates real-world findings. Whether gamers ARE actually more creative, or whether the tests which assess creativity are biased towards those that are used to gaming is outside our realms to assess at this point. Therefore, let's ignore the interpretation of the result here, simply because, well, it doesn't matter for the purposes of the analysis.
+
+# Effect of IQ on Creativity
+
+## Linear Model Time!
+
+One thing we would definitely be interested in is: Do more intelligent people show higher levels of creativity? A simple model to check this is checking the effect that iq has on the creativity score, using a linear regression model. In R, these can simply be created using *lm()*
+
+```{r}
+m1 <- lm(creative_task ~ iq, data=dat)
+summary(m1)
+```
+
+You can see that the iq-coefficient returns highly significant, indeed indicating that a higher iq leads to a higher amount of creativity! We can also plot this using ggplot:
+
+```{r}
+iq_creat_lm <- ggplot(dat, aes(iq, creative_task)) + geom_smooth(method=lm)
+iq_creat_lm
+```
+
+Using ggplot, we can see that the linear model seems highly significant and that, the more intelligent one is, the more creative. It is however recommendable to not blindly just fit a linear model, but add a scatterplot, actually plotting all individual values to see whether the model actually fits well. We can easily add the scatterplot by using *geom_point()*:
+
+```{r}
+iq_creat_lm + geom_point(alpha=0.2)
+```
+
+While this at first looks quite okay-fitting, we can see that at low IQs between 75 and 100, the regression line clearly is higher than the blob of scores, while at higher IQ scores it seems a bit too low. This indicates, that a linear regression might not be the best fit for this data.
+
+# Trying a Generalized Additive Model (GAM):
+
+Therefore, we will test a Generalized Additive Model (GAM). If you've never heard of this, don't despair, it's quite an advanced model, although consider it valuable when working with statistical models, these models are very powerful!
+
+We will not go much into details, but a GAM allows you to use a non-linear regression and even test multiple predictors at once in a complex fashion. Let us just fit and visualize a GAM-model, so you can see what it does and how it works approximately.
+
+We use the *gam()*-function from the *mgcv*-package. we again depend the *creative_task* on the *iq*, however we use iq as a *smooth term*, by putting it within the *s()*-function, setting *"cr"* as a *bs*, meaning that we base the smooth term on a cubic spline. We will not explain what this means, because setting these terms well is... hard, and a bit of an art. However, this is a default choice which should give us a decent model.
+
+```{r}
+library(mgcv)
+m2 <- gam(creative_task ~ s(iq, bs="cr"), data=dat)
+summary(m2)
+```
+
+Similar to our linear model, we can see that the p-value is highly significant. We will not explain any of the other terms, but you can of course look them up.
+To test whether our second model is actually an improvement over the first, we can compare both models using the *anova()* function, which compares different models and checks whether one model is a significant improvement over another model.
+
+```{r}
+anova(m1, m2)
+```
+And indeed, you can see that the amount of residuals in the second model are lower than in the first and that this difference is significant. This means that the GAM-model is significantly better at explaining the relationship between IQ and creativity than the Linear Model.
+
+Let's now visualize the gam, showing you what exactly it looks like:
+
+```{r}
+iq_creat_gam <- ggplot(dat, aes(iq, creative_task)) + geom_smooth(method="gam") + geom_point(alpha=0.2)
+iq_creat_gam
+```
+Due to the low amount of data at the respective ends we see a much larger confidence interval than in the middle, but the general model and trend shows that iq really only improves creativity up to about a score of 115, then it levels off. The model itself does not just create a linear line, but instead a smooth curve trying to estimate the curvature of the regression line, which in this case does not seem linear.
+
+The levelling off effect of IQ on creativity, by the way, is an actual scientific observation (even though this data is artificial). Therefore, always make sure that you find the optimal model and don't just go with a linear model, even if it seems fitting.
+
+# Effect of Schizophreny on Creativity
+
+You know the drill, now it's time for you to do repeat the analysis we did before, but on another variable! We will check the effect of the schizophreny scores on creativity. Does it relate? Are Schizophrenic people more creative? Let's see...
+
+First, create a basic linear model with *lm()* to investigate the effect of the *schizo_score* in creativity and investigate the summary. Why do we not use that beautiful *schizo_norm* which we've created? Because... we don't really need to, and this way we can easily investigate how the actual test scores influence creativity without having to transform the scores back.
+
+```{r}
+m3 <- 
+```
+
+...and then plot the same model with ggplot:
+
+```{r}
+schizo_creat_lm <- 
+```
+
+Amazing! Clearly the linear model indicates that a high score on the Schizophreny test indicates a higher creativity score! Schizophrenic people must be highly creative! Well, let us just shortly plot the scatterplot over it to check whether the linear model is a good fit:
+
+```{r}
+
+```
+
+We don't have a lot of scores in the top range of the Schizophreny test, but we can see that all of them tend to be too low. Also, we can see that a linear regression line in between the range of 0-50 on the Schizophreny test would probably be steeper.
+
+Maybe we should also fit a GAM here, as we did before, and check the model summary as well. You can take the exact parameters we've used before:
+
+```{r}
+m4 <- 
+```
+
+...and visualize the GAM as well, you can even add the scatterplot into it immediately:
+
+```{r}
+schizo_creat_gam <- 
+```
+Looking a lot better! Let's finally compare the linear model and the GAM using the anova-function:
+
+```{r}
+
+```
+
+Indeed, the GAM explains the data a lot better! So, what can we see here? Up to a certain point of tendencies towards Schizophreny, the creativity actually increases. This is the case when people have a tendency, but no full blown Schizophrenic disorder. At high scores, indicating a full Schizophreny, creativity goes completely down, it takes a reverse turn. So, tendencies help, but if they go too far, creativity suffers. This shape, by the way, is called "U-shaped" and again, this observation about the relationship between Schizophreny and creativity is taken from actual scientific observations(although the test scores and everything are, of course, fake).
+
+# Revising Male Creativity Superiority! - Interaction Effects
+
+Finally, let's go back to the findings of gender creativity issues. Remember how we created a t-test, checking creativity differences between males and females? Similarly, we could just create a linear model representing this relationship. The reason for this will become apparent soon, let's for now create a basic linear regression model using *lm()* with creativity as outcome and sex as independent variable and investigate the summary of the model. You remember how this is done, right? 
+
+Oh, and remember how annoying it was to copy and paste the sex-restriction over and over again, because we didn't have enough data for the "others"? Well, we can just create a second version of our dataset to make it easier:
+
+```{r}
+dat2 <- dat[dat$sex %in% c("M", "F"),]
+```
+
+Just remember to use *dat2* for the following analyses. Now, create the linear model:
+
+```{r}
+m5 <- 
+```
+
+We can see that, indeed, the male creativity scores are significantly higher than the female creativity scores, which is obviously what we already found with the t test. Let's shortly visualize this model to see, how categorical independent variables look in a linear model. Pay attention to the sex being converted to a *numeric*, which was automatically done in the *lm()* function, but has to be manually done here:
+
+```{r}
+sex_creat_lm <- ggplot(dat2, aes(as.numeric(sex), creative_task)) + geom_smooth(method=lm)
+sex_creat_lm
+```
+Females are represented at the value 1, while males are represented at value 2. You can see that, indeed, there is a difference. The linear model then draws a line, although to be fair, even with gender fluidity in mind, any in-between values of 1.2 or 1.5, just exist mathematically, they bear no meaning for the real life interpretation of this categorical model.
+
+## Investigating Interaction Effects.
+
+You know... I suddenly remember that we found that gamers were actually more creative than non-gamers... hmmm... And based on my experience, males tend to game more than females, sooo... Is it possible, that the only reason why males were more creative is that they game more, and it is indeed not a consequence of biological differences?
+
+We can test this by checking the *interaction* between two variables, namely the sex and gaming. Let's look at the pirateplot of the sex differences in creativity again:
+
+```{r}
+pirateplot(formula = creative_task ~ sex, data = dat2)
+```
+And we also saw in the linear model that the respective means were 4.42 for females and 4.89 for males.
+
+So, what we would be interested in, is: Are female gamers as creative as male gamers and female non-gamers as creative as male non-gamers? Let's check the respective means by using *aggregate*. Aggregate allows us to aggregate data based on a formula, in this case sex and gaming, so *sex + gaming*. We then apply a function to the separated groups, which are four groups:
+
+* Female Gamers
+* Male Gamers
+* Female Non-Gamers
+* Male Non-Gamers
+
+The function applied to the grouped data is *mean*, as we care about the mean creativity scores:
+
+```{r}
+genderized_insights <- aggregate(formula=creative_task ~ sex + gaming, data=dat2, FUN=mean)
+genderized_insights
+```
+
+The outcome shows that for non-gamers, both the female and male mean are nearly identical, and both female and male means for gamers are respectively higher. The female gamer mean is even a bit higher than the male one! This indicates, that the whole effect of males being more creative must probably have been caused by the higher amount of gamers, but we should still test this statistically and visualize it.
+
+We can actually extend the pirateplot from above, separating it into the four mentioned categories, by checking the interaction. This is done using the star symbol, *. This has to be put in between two variables to check for their interaction. The plot then becomes the following:
+
+```{r}
+pirateplot(formula = creative_task ~ sex * gaming, data = dat2)
+```
+This plot basically visualized what we've seen before, although due to the addition of confidence interval bands, we can see that the means between the gamers probably does not differ significantly.
+
+We can now create a formal linear model using the same formula as in the pirateplot and check the summary. You do it, you have experience with this now :)
+
+```{r}
+m6 <- 
+```
+
+As you can see, there is no effect of sex, there is also no interaction effect between sex and gaming. The whole effect we observed in the linear model between the sexes originally stems from gaming. We were led afoot by the fact that there are more male gamers than female gamers!
+
+Let's shortly compare the last two models on their suitability, using an anova:
+
+```{r}
+anova(m5, m6)
+```
+
+Unsurprisingly, the second model outperforms the first.
+
+However, we can also just abandon the sex-term completely and compare whether it is still as good as the more complex model:
+
+```{r}
+m7 <- lm(creative_task ~ gaming, data=dat2)
+summary(m7)
+```
+```{r}
+anova(m6, m7)
+```
+
+You can see that there is no significant difference in how well these models perform. In this case, you should always opt for the simpler model, which indeed is model 7. Sex simply plays no role in explaining creativity.
+
+Before we finish, a short comment on the realism of the last observations: Yes, there are more male gamers and yes, gamers have been found to be more creative, however: Even in this case, I am not sure whether males would actually outperform females, simply because females will on average have other hobbies that lead to higher creativity. The most plausible explanation for a result like this would be that the way we assess creativity is based on a test which somehow has aspects of creativity close to the one used in gaming, so the concept of creativity tested in this test would be biased towards gamers. Ultimately, the whole data here is simulated, so none of this is real anyway. Just be aware that results like these might actually happen and might mislead you to draw false conclusions!
+
+I hope you found this workbook a helpful, insightful primer to R!
+
+If you feel like going on, there is an extra task:
+
+# EXTRA: CREATE AN AMAZING GAM!
+
+Remember that GAM with the smooth schizophreny term? We can extend this with interactions (using *) as well as just using multiple predictors without interaction, using (+). Try to extend the model and find the perfect model explaining creativity! The obvious way to start is including the gaming variable we have found before, but you can always try more variables. There should indeed be a "perfect" model which isn't too complex, but I'd be amazed if you found it :)
+
+And as always: Google!
